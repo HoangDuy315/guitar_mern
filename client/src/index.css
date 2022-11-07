@@ -1,0 +1,110 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+/* Navbar */
+.navbar-nav li {
+  font-size: 17px;
+}
+.navbar-brand {
+  letter-spacing: 6px;
+}
+
+.card {
+  transition: all 0.5s ease;
+}
+
+.card:hover {
+  transform: scale(1.1);
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+}
+
+#home {
+  background: url("./assets/logo.png") rgba(0, 0, 0, 0.7);
+  background-blend-mode: overlay;
+  min-height: 600px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin-top: 0.3px;
+}
+
+.sendd {
+  background-size: cover;
+  background-blend-mode: overlay;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  max-width: 100vw;
+  width: 100vw;
+}
+
+/* product */
+.product img {
+  transition: all 0.5s ease;
+}
+.product img:hover {
+  transform: scale(1.1);
+}
+
+/* buynow */
+.buynowimg {
+  margin-left: -50px;
+  width: 90%;
+  height: 90%;
+}
+
+.title {
+  margin-top: -45px;
+  font-size: 40px;
+}
+.price {
+  margin-top: -55px;
+}
+.desc {
+  font-size: 16px;
+}
+
+/* serve */
+.serve {
+  list-style: none;
+  margin-left: -15px;
+}
+.icon {
+  margin-right: 20px;
+  color: salmon;
+}
+
+/* symbol */
+.symbol0 {
+  margin-left: 270px;
+  margin-top: 30px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+.symbol {
+  width: 50%;
+  height: 50%;
+  transition: all 0.5s ease;
+  border: 1px solid rgb(237, 191, 52);
+  border-radius: 100px;
+}
+.symbol:hover {
+  transform: scale(1.1);
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+}
