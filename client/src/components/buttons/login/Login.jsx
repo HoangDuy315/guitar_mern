@@ -19,7 +19,7 @@ function Login() {
                         <span className='login-input-span'>Password</span>
                         <input type="password" className='login-input-box' placeholder='Nhap Password'></input>
                     </div>
-                        <button className="btn-login mr-32">
+                        <button className="btn-login">
                             <NavLink className="btn__login-route" to="/home" onClick={this}>Login</NavLink>
                         </button>
                     <div className='text__forgot mr-16'>
