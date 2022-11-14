@@ -2,23 +2,25 @@
 .login-container {
     width: 100%;
     height: 100vh;
-    background: linear-gradient(135deg, rgba(34,193,195,1) 0%,     rgba(253,187,45,1) 100%);
-    position: relative;
+    background: linear-gradient(135deg, rgb(212, 209, 157) 0%,     rgb(252, 174, 6) 100%);
+    /* position: relative; */
     box-sizing: border-box;
+    padding-top: 50px;
     
 }
 .login-content {
-    position: absolute;
+    /* position: absolute; */
     left: 0;
     top: 0;
     right: 0;
     bottom: 0;
     margin: auto;
     width: 500px;
-    height: 600px;
+    height: 630px;
     background-color: white;
     border-radius: 25px;
     padding: 18px;
+    
     
     
 }
@@ -52,19 +54,21 @@
  margin: 0;
 }
 .btn-login {
-    width: 50%;
     height: 40px;
-    background: linear-gradient(135deg, rgba(34,193,195,1) 0%,     rgba(253,187,45,1) 100%);
+    background: linear-gradient(225deg, rgb(240, 238, 182) 0%,     rgb(252, 174, 6) 100%);
     color: white;
     font-size: 26px;
     font-weight: 500px;
     border-radius: 25px;
     border: none;
+    width: 50%;
+    margin: 32px 0;
+    margin-left: 25%;
 }
 .btn-login:hover {
     cursor: pointer;
-    background: linear-gradient(45deg, rgb(56, 235, 65) 0%,     rgb(45, 80, 235) 100%);
-
+    /* background: linear-gradient(45deg, rgb(56, 235, 65) 0%,     rgb(45, 80, 235) 100%); */
+    background: linear-gradient(45deg, rgb(240, 238, 182) 0%,     rgb(252, 174, 6) 100%);
 }
 .btn__login-route {
     text-decoration: none;
@@ -83,6 +87,7 @@
 }
 .login__more {
     text-align: center;
+    margin-top: 32px;
 }
 .login__more-text {
     font-size: 20px;
