@@ -8,6 +8,7 @@
     padding-top: 50px;
     
 }
+
 .login-content {
     /* position: absolute; */
     left: 0;
@@ -29,6 +30,11 @@
     font-size: 32px;
     font-weight: 600;
     margin-bottom: 38px;
+
+}
+.login-title:hover {
+    transform:  scale(1.5);
+    
 }
 .login-input-form {
 
