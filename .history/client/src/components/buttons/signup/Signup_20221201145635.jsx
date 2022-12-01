@@ -49,7 +49,7 @@ function Signup() {
   };
   return (
     <>
-      <form action="" className="form" onSubmit={handleSubmit} method="POST">
+      <form className="form" onSubmit={handleSubmit} method="POST">
         <div className="signup-container">
           <div className="signup-content">
             <h1 className="signup-title">Sign Up</h1>

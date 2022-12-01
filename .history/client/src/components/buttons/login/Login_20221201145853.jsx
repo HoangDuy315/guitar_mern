@@ -50,7 +50,7 @@ function Login() {
         <div className="login-content">
           <h1 className="login-title">Login</h1>
           <div className="login-input-form">
-            <span className="login-input-span">Email</span>
+            <span className="login-input-span">Username</span>
             <input
               type="Email"
               className="boxx"
