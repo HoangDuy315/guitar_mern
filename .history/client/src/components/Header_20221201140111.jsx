@@ -2,8 +2,9 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import LOGO from "../assets/logo1.png";
 import "../style/style.css";
+import Cartbtn from "./buttons/Cartbtn";
 
-const Header = () => {
+const Header = (props) => {
   return (
     <>
       <nav className="navbar navbar-expand-lg navbar-light bg-dark shadow-sm border-light">
@@ -62,23 +63,22 @@ const Header = () => {
                 </NavLink>
               </li>
             </ul>
-            {/* <NavLink className="navbar-brand mx-auto fw-bold text-warning fs-4" to="/">GNAHYUD</NavLink> */}
-
-            <NavLink className="login text-warning" to="/login">
-              Login
-            </NavLink>
-
-            {/* Cart */}
-            <div className="">
-              <NavLink
-                to="/cart"
-                className="btn btn-outline-warning rounded-pill ms-2"
-              >
-                <span className="fa fa-shopping-cart me-1"></span>
-              </NavLink>
-            </div>
-            {/* Cart */}
           </div>
+
+          {props.auth ? (
+            <>
+              <NavLink className="login text-warning" to="/login">
+                Login
+              </NavLink>
+            </>
+          ) : (
+            <>
+              <NavLink className="logout text-warning" to="/logout">
+                Logout
+              </NavLink>
+            </>
+          )}
+          <Cartbtn />
         </div>
       </nav>
     </>

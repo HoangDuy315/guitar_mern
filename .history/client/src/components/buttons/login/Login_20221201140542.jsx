@@ -2,32 +2,77 @@ import { NavLink } from "react-router-dom";
 import "./Login.css";
 
 function Login() {
+  const history = useHistory();
+
+  const [user, setUser] = useState({
+    email: "",
+    password: "",
+  });
+
+  const handleChange = (event) => {
+    let name = event.target.name;
+    let value = event.target.value;
+
+    setUser({ ...user, [name]: value });
+  };
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    const { email, password } = user;
+    try {
+      const res = await fetch("/login", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          email,
+          password,
+        }),
+      });
+
+      if (res.status === 400 || !res) {
+        window.alert("Invalid Credentials");
+      } else {
+        window.alert("Login Successfully");
+        window.location.reload();
+        history.push("/");
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   return (
-    <>
+    <form className="form" onSubmit={handleSubmit}>
       <div className="login-container">
         <div className="login-content">
           <h1 className="login-title">Login</h1>
           <div className="login-input-form">
             <span className="login-input-span">Username</span>
             <input
-              type="text"
-              required
-              className="login-input-box"
-              placeholder="Nhap username"
-            ></input>
+              type="Email"
+              className="boxx"
+              placeholder="Type your email"
+              name="email"
+              value={user.email}
+              onChange={handleChange}
+            />
           </div>
           <div className="login-input-form">
             <span className="login-input-span">Password</span>
             <input
-              type="password"
-              required
-              className="login-input-box"
-              placeholder="Nhap Password"
-            ></input>
+              type="Password"
+              className="boxx"
+              placeholder="Password"
+              name="password"
+              value={user.password}
+              onChange={handleChange}
+            />
           </div>
           <button className="btn-login">
             {/* <NavLink className="btn__login-route" to="/home" onClick={this}> */}
-              Login
+            Login
             {/* </NavLink> */}
           </button>
           <div className="text__forgot mr-16">
@@ -51,7 +96,7 @@ function Login() {
           </div>
         </div>
       </div>
-    </>
+    </form>
   );
 }
 
