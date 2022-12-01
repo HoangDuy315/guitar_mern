@@ -2,7 +2,7 @@ import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { delItem } from "../redux/actions/index";
 import "../style/style.css";
-import EMPTY from "../components/buttons/imgButton/empty.png";
+import EMPTY from "../components/buttons/imgbutton/empty.png"
 import { NavLink } from "react-router-dom";
 
 const Cart = () => {
@@ -12,7 +12,6 @@ const Cart = () => {
   const handleClose = (item) => {
     dispatch(delItem(item));
   };
-
   const cartItems = (cartItem) => {
     return (
       <div className=" px-4 my-5 bg-light rounded-3" key={cartItem.id}>
