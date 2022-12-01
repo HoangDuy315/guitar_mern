@@ -37,7 +37,7 @@ function Login() {
       } else {
         window.alert("Login Successfully");
         window.location.reload();
-        history.push("/");
+        history.replace("/");
       }
     } catch (error) {
       console.log(error);
@@ -53,7 +53,7 @@ function Login() {
             <span className="login-input-span">Email</span>
             <input
               type="Email"
-              className="boxx"
+              className="boxx login-input-box"
               placeholder="Type your email"
               name="email"
               value={user.email}
@@ -64,7 +64,7 @@ function Login() {
             <span className="login-input-span">Password</span>
             <input
               type="Password"
-              className="boxx"
+              className="boxx login-input-box"
               placeholder="Password"
               name="password"
               value={user.password}

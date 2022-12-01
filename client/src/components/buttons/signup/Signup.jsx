@@ -57,7 +57,7 @@ function Signup() {
               <span className="signup-input-span">Username</span>
               <input
                 type="Name"
-                className="box"
+                className="box signup-input-box"
                 placeholder="Type your fullname"
                 name="username"
                 value={user.username}
@@ -69,7 +69,7 @@ function Signup() {
               <span className="signup-input-span">Password</span>
               <input
                 type="Email"
-                className="box"
+                className="box signup-input-box"
                 placeholder="Type your email"
                 name="email"
                 value={user.email}
@@ -80,7 +80,7 @@ function Signup() {
               <span className="signup-input-span">Email</span>
               <input
                 type="Password"
-                className="box"
+                className="box signup-input-box"
                 placeholder="Password"
                 name="password"
                 value={user.password}

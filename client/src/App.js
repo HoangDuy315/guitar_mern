@@ -16,7 +16,7 @@ import { useEffect, useState } from "react";
 import BuyNow from "./components/BuyNow";
 import Cart from "./components/Cart";
 import Checkout from "./components/Checkout";
-
+import ManagementUser from "./components/managementuser/ManagementUser";
 
 
 
@@ -56,7 +56,7 @@ function App() {
 
   return (
     <>
-      <Header auth={auth1} />
+      <Header auth={auth1}/>
       <Switch>
         <Route exact path="/" component={Home} />
         <Route exact path="/products" component={Product} />
@@ -74,6 +74,7 @@ function App() {
         <Route exact path="/about" component={About} />
         <Route exact path="/checkout" component={Checkout} />
         <Route exact path="/contact" component={Contact} />
+        <Route exact path="/managementuser" component={ManagementUser} />
         <ProtectedRoute exact path="/cart" component={Cart} auth={auth} />
         <Redirect to="/" />
       </Switch>

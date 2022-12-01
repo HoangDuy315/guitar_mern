@@ -1,0 +1,74 @@
+
+ul, li {
+    list-style: none;
+}
+.managementUser-title {
+    text-align: center;
+    margin-top: 32px;
+  }
+  .managementUser-sub-title {
+      margin: 32px;
+      font-size: 22px;
+  }
+  .qluse--container {
+      margin: 0 auto;
+  
+  }
+  .managementUser__list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 32px;
+      margin-left: 7%;
+      margin-top: 50px;
+  
+  }
+  .managementUser__list-item {
+      padding: 8px;
+      width: calc(100% / 6);
+      background-color: rgb(211, 243, 243);
+      border-radius: 8px;
+      box-shadow: 5px 5px 5px rgb(211, 211, 211);
+  }
+  .managementUser__list-item--container {
+      height: 170px;
+      margin: 16px 8px;
+  }
+  .qluer__list-item--avatar {
+      display: block;
+      height: 200px;
+      margin: 0 auto;
+      
+  }
+  .managementUser__list-item__active {
+      height: 50px;
+      display: flex;
+      justify-content: space-around;
+  }
+  .managementUser-activer {
+      width: 70px;
+      height: 32px;
+      cursor: pointer;
+      border-radius: 8px;
+      color: #7446A1;
+      background-color: rgb(211, 243, 243);
+      border: none;
+      font-weight: 600;
+      font-size: 16px;
+  
+  }
+  .managementUser-activer:hover {
+      color: blue;
+      transform: scale(1.2);
+  }
+  .managementUser__footer {
+      text-align: center;
+      margin: 32px 0;
+  }
+  .managementUser-showmore {
+      font-size: 22px;
+      cursor: pointer;
+  
+  }
+  .managementUser-showmore:hover {
+      color: rgb(103, 103, 241);
+  }

@@ -3,8 +3,18 @@ import { NavLink } from "react-router-dom";
 import LOGO from "../assets/logo1.png";
 import "../style/style.css";
 import Cartbtn from "./buttons/Cartbtn";
-
+import { useEffect, useState } from "react";
 const Header = (props) => {
+  const [isAdmin, setIsAdmin] = useState('')
+  useEffect(() => {
+    fetch('/getoneUser')
+    .then(res => res.json())
+    .then(res => {
+      setIsAdmin(res.role)
+      console.log(isAdmin)
+
+    })
+  })
   return (
     <>
       <nav className="navbar navbar-expand-lg navbar-light bg-dark shadow-sm border-light">
@@ -62,6 +72,18 @@ const Header = (props) => {
                   <div className="hihi">Contact</div>
                 </NavLink>
               </li>
+              {isAdmin === "Admin" ? (
+                <li className="nav-item">
+                  <NavLink
+                    className="nav-link text-light fw-bold"
+                    to="/managementuser"
+                  >
+                    <div className="hihi">Management User</div>
+                  </NavLink>
+                </li>
+              ) : (
+                <></>
+              )}
             </ul>
           </div>
 
