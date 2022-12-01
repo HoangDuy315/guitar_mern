@@ -17,9 +17,6 @@ import BuyNow from "./components/BuyNow";
 import Cart from "./components/Cart";
 import Checkout from "./components/Checkout";
 
-
-
-
 function App() {
   const [auth, setAuth] = useState(false);
   const [auth1, setAuth1] = useState(true);

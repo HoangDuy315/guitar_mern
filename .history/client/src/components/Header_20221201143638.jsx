@@ -78,7 +78,7 @@ const Header = (props) => {
               </NavLink>
             </>
           )}
-          <Cartbtn />
+          {/* <Cartbtn /> */}
         </div>
       </nav>
     </>

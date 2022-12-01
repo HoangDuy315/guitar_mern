@@ -2,7 +2,7 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import LOGO from "../assets/logo1.png";
 import "../style/style.css";
-import Cartbtn from "./buttons/Cartbtn";
+import Cartbtn from "../components/buttons/Cartbtn";
 
 const Header = (props) => {
   return (

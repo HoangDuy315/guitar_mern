@@ -6,6 +6,13 @@ import About from "./About";
 import Contact from "./Contact";
 import Carousel from "./Carousel";
 import "../style/style.css";
+import FE from "../assets/fender.png";
+import JA from "../assets/jackson.png";
+import CH from "../assets/charvel.png";
+import CO from "../assets/cordoba.png";
+import TA from "../assets/takamine.png";
+import TAN from "../assets/tanglewood.png";
+import TAY from "../assets/taylor.png";
 import SHIP from "../assets/ship.png";
 import { FaMedal } from "react-icons/fa";
 import { FaShippingFast } from "react-icons/fa";
@@ -78,6 +85,25 @@ const Home = () => {
       </div>
       <Staff />
       <About />
+      <div className="container mb-1">
+        <div className="row">
+          <div className="col-12 text-center py-4 my-4">
+            <h1 className="fw-bold text-warning fs-2">FEATURED BRANDS</h1>
+            <hr />
+          </div>
+        </div>
+        <div className="row fw-bold text-warning">
+          <div className="symbol0 col-md-6 d-flex justify-content-around">
+            <img src={TA} className="symbol ms-4 " alt="about us" />
+            <img src={TAN} className="symbol ms-4 " alt="about us" />
+            <img src={TAY} className="symbol ms-4 " alt="about us" />
+            <img src={FE} className="symbol ms-4 " alt="about us" />
+            <img src={JA} className="symbol ms-4 " alt="about us" />
+            <img src={CH} className="symbol ms-4 " alt="about us" />
+            <img src={CO} className="symbol ms-4 " alt="about us" />
+          </div>
+        </div>
+      </div>
       <Contact />
     </div>
   );
