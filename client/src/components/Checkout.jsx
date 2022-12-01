@@ -12,7 +12,6 @@ const Cart = () => {
   const handleClose = (item) => {
     dispatch(delItem(item));
   };
-
   const cartItems = (cartItem) => {
     return (
       <div className=" px-4 my-5 bg-light rounded-3" key={cartItem.id}>
