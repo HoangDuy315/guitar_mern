@@ -2,7 +2,7 @@ import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { delItem } from "../redux/actions/index";
 import "../style/style.css";
-import EMPTY from "../components/buttons/imgButton/empty.png";
+import EMPTY from "../components/buttons/imgbutton/empty.png"
 import { NavLink } from "react-router-dom";
 
 const Cart = () => {
