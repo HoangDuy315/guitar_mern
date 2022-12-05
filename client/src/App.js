@@ -19,10 +19,12 @@ import Checkout from "./components/Checkout";
 import ManagementUser from "./components/managementuser/ManagementUser";
 
 
+
+
 function App() {
   const [auth, setAuth] = useState(false);
   const [auth1, setAuth1] = useState(true);
-
+  console.log(auth1);
   const isLoggedIn = async () => {
     try {
       const res = await fetch("/auth", {
