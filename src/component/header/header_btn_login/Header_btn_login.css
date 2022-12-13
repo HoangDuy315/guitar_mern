@@ -1,0 +1,14 @@
+.Header_btn_login {
+    border: 2px solid rgb(95,79,204);
+    padding: 2px 8px;
+    font-size: 18px;
+    text-decoration: none;
+    font-weight: 600;
+    opacity: .8;
+    border-radius: 6px;
+}
+.Header_btn_login:hover {
+    opacity: 1;
+    background-color:  rgb(95,79,204);
+    color: white;
+}

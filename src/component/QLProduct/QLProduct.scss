@@ -1,0 +1,106 @@
+.product {
+  width: 1000px;
+  margin: 0 auto;
+  .header {
+    margin-top: 32px;
+    text-align: center;
+  }
+  .add-product {
+    top: -50px;
+    right: 0;
+    font-size: 20px;
+    border: none;
+    outline: none;
+    font-weight: 600;
+    padding: 4px 8px;
+    background-color: #f0f5f8;
+    color: rgb(82, 82, 82);
+    float: right;
+    &:hover {
+      cursor: pointer;
+      color: rgb(0, 89, 255);
+      // background-color: #ccc;
+    }
+  }
+  .header-table {
+    text-align: center;
+    margin-top: 50px;
+    display: flex;
+    height: 50px;
+    line-height: 50px;
+    font-size: 24px;
+    background-color: rgb(226, 226, 226);
+    .stt {
+      width: 50px;
+    }
+    .name {
+      width: 275px;
+    }
+    .price {
+      width: 225px;
+    }
+    .sale {
+      width: 100px;
+    }
+    .quantity {
+      width: 100px;
+    }
+    .action {
+      width: 250px;
+    }
+   
+  }
+  .listproduct {
+    font-size: 20px;
+    text-align: center;
+    background-color: #f0f0f0;
+    .item {
+      display: flex;
+      margin-top: 8px;
+      border-bottom: 1px solid #ccc;
+      padding: 4px 0;
+      .stt {
+        width: 50px;
+      }
+      .name {
+        width: 275px;
+      }
+      .price {
+        width: 225px;
+      }
+      .sale {
+        width: 100px;
+      }
+      .quantity {
+        width: 100px;
+      }
+      .action {
+        width: 250px;
+        display: flex;
+        gap: 32px;
+        justify-content: center;
+
+        .btn {
+          border: none;
+          outline: none;
+          font-size: 18px;
+        }
+        .edit {
+          width: 50px;
+          &:hover {
+            cursor: pointer;
+            color: rgb(0, 162, 255);
+          }
+        }
+        .delete {
+          width: 100px;
+
+          &:hover {
+            cursor: pointer;
+            color: rgb(255, 81, 0);
+          }
+        }
+      }
+    }
+  }
+}
