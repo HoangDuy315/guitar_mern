@@ -1,0 +1,129 @@
+.qluser {
+  position: relative;
+}
+.qluser-title {
+  text-align: center;
+  margin-top: 32px;
+}
+.qluser-sub-title {
+  margin: 32px;
+  font-size: 22px;
+}
+.qluse--container {
+  margin: 0 auto;
+}
+.qluser__list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px;
+  margin-left: 7%;
+  margin-top: 50px;
+}
+.qluser__list-item {
+  padding: 8px;
+  width: calc(100% / 6);
+  background-color: rgb(211, 243, 243);
+  border-radius: 8px;
+  box-shadow: 5px 5px 5px rgb(211, 211, 211);
+}
+.qluser__list-item--container {
+  height: 170px;
+  margin: 16px 8px;
+}
+.qluer__list-item--avatar {
+  display: block;
+  height: 200px;
+  margin: 0 auto;
+}
+.qluser__list-item__active {
+  height: 50px;
+  display: flex;
+  justify-content: space-around;
+}
+.qluser-activer {
+  width: 70px;
+  height: 32px;
+  cursor: pointer;
+  border-radius: 8px;
+  color: #7446a1;
+  background-color: rgb(211, 243, 243);
+  border: none;
+  font-weight: 600;
+  font-size: 16px;
+}
+.qluser-activer:hover {
+  color: blue;
+  transform: scale(1.2);
+}
+.qluser__footer {
+  text-align: center;
+  margin: 32px 0;
+}
+.qluser-showmore {
+  font-size: 22px;
+  cursor: pointer;
+}
+.qluser-showmore:hover {
+  color: rgb(103, 103, 241);
+}
+
+.modal-delete {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+.modal-delete__box {
+  background-color: rgb(240, 240, 240);
+  border: 2px solid rgb(177, 177, 177);
+  border-radius: 8px;
+  opacity: 1;
+  width: 500px;
+  height: 200px;
+  margin: 10% auto;
+  z-index: 999;
+}
+.modal-delete__header {
+  display: flex;
+  justify-content: space-between;
+  padding: 4px 16px;
+  height: 20%;
+}
+.modal-delete__header-btn {
+  border: none;
+    font-size: 18px;
+}
+.modal-delete__header-btn:hover {
+    color: red;
+    cursor: pointer;
+}
+.modal-delete__body {
+    height: 55%;
+    
+}
+.modal-delete__footer {
+    display: flex;
+    height: 25%;
+    flex-direction: row-reverse;
+    padding: 8px 16px;
+    gap: 32px;
+}
+.modal-delete__footer-btn {
+    padding: 0 12px;
+    font-size: 16px;
+    text-align: center;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    cursor: pointer;
+}
+
+.modal-delete__footer-btn:hover {
+    background-color: #d0e3f5;
+}
+.modal--active {
+    color: white;
+    background-color: #3479BC;
+}
+.modal--active:hover {
+    background-color: #3c92e7;
+
+}
