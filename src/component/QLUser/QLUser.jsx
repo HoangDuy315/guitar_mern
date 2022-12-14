@@ -8,17 +8,17 @@ function QLUer() {
   const [show, setShow] = useState(false);
 
   const handdleDelete = (selectId) => {
-      fetch(`${process.env.REACT_APP_API}/api/delete/` + selectId, {
-        method: "DELETE",
-      })
-        .then((res) => res.json())
-        .then((res) => {
-          if (res.status === 200) {
-            alert(res.message + " deleted");
-            const newlist = listUser.filter((item) => item._id !== selectId);
-            setListUser(newlist);
-          } else alert(res.message);
-        });
+    fetch(`${process.env.REACT_APP_API}/api/delete/` + selectId, {
+      method: "DELETE",
+    })
+      .then((res) => res.json())
+      .then((res) => {
+        if (res.status === 200) {
+          alert(res.message + " deleted");
+          const newlist = listUser.filter((item) => item._id !== selectId);
+          setListUser(newlist);
+        } else alert(res.message);
+      });
   };
   useEffect(() => {
     fetch(`${process.env.REACT_APP_API}/api/getUser`)
@@ -36,24 +36,35 @@ function QLUer() {
   const handleShow = () => setShow(true);
   return (
     <div className="qluser">
-      {show ? <div className="modal-delete">
-        <div className="modal-delete__box">
-          <div className="modal-delete__header">
-            <h2 className="modal-delete__header-title">Are you sure ?</h2>
-            <button className="modal-delete__header-btn" onCick={handleClose}>Close</button>
+      {show ? (
+        <div className="modal-delete">
+          <div className="modal-delete__box">
+            <div className="modal-delete__header">
+              <h2 className="modal-delete__header-title">Are you sure ?</h2>
+              <button className="modal-delete__header-btn" onCick={handleClose}>
+                Close
+              </button>
+            </div>
+            <hr />
+            <div className="modal-delete__body">
+              <p className="modal-delete__body-text">
+                Would you want to delete User ?
+              </p>
+            </div>
+            <hr />
+            <div className="modal-delete__footer">
+              <button className="modal-delete__footer-btn modal--active">
+                OK
+              </button>
+              <button onCick={handleClose} className="modal-delete__footer-btn">
+                Cancel
+              </button>
+            </div>
           </div>
-          <hr/>
-          <div className="modal-delete__body">
-            <p className="modal-delete__body-text">Would you want to delete User ?</p>
-          </div>
-          <hr/>
-      <div className="modal-delete__footer">
-          <button className="modal-delete__footer-btn modal--active">OK</button>
-          <button onCick={handleClose}className="modal-delete__footer-btn">Cancel</button>
-      </div>
         </div>
-      </div> : <></> }
-      
+      ) : (
+        <></>
+      )}
 
       <h1 className="qluser-title">Quan Ly Thong Tin User</h1>
       <div className="qluse--container">
@@ -74,19 +85,19 @@ function QLUer() {
                     </p>
                     <p className="qluser__list-item__password">
                       {" "}
-                     Password: <strong>********</strong>
+                      Password: <strong>********</strong>
                     </p>
                     <p className="qluser__list-item__email">
                       {" "}
-                     Email: <strong>{user.email}</strong>
+                      Email: <strong>{user.email}</strong>
                     </p>
                     <p className="qluser__list-item__role">
                       {" "}
-                     Role: <strong>{user.role}</strong>
+                      Role: <strong>{user.role}</strong>
                     </p>
                     <p className="qluser__list-item__date">
                       {" "}
-                     Date Create:<strong>{user.dateCreate}</strong>
+                      Date Create:<strong>{user.dateCreate}</strong>
                     </p>
                   </div>
                   <div className="qluser__list-item__active">
