@@ -44,17 +44,17 @@ function Header({ onLogOut}) {
             <li className="heading__nav-item">
               
             {User ? <NavLink
-                to="/books"
+                to="/about"
                 onClick={this}
                 className="heading__nav-item--link"
               >
                 About Author
-              </NavLink> : <p className="heading__nav-item--p">About Author</p>}
+              </NavLink > : <p className="heading__nav-item--p">About Author</p>}
             </li>
             <li className="heading__nav-item">
               
             {User ? <NavLink
-                to="/books"
+                to="/blog"
                 onClick={this}
                 className="heading__nav-item--link"
               >
@@ -65,7 +65,7 @@ function Header({ onLogOut}) {
             <li className="heading__nav-item">
               
             {User ? <NavLink
-                to="/books"
+                to="/contact"
                 onClick={this}
                 className="heading__nav-item--link"
               >
