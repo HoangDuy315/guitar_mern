@@ -10,7 +10,7 @@ function Home() {
     const inter = setInterval(() => { 
       setCurrentBook(currentBook < (ListBookDefautl.length  -1) ? currentBook + 1 : 0) ;
       console.log(currentBook)
-    }, 5000);
+    }, 3000);
 
     return () => clearInterval(inter);
   }, [currentBook]);

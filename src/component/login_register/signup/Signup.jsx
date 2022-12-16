@@ -149,7 +149,7 @@ function Signup() {
                       to="/login"
                       onClick={this}
                     >
-                      <strong>Login here</strong>
+                      <strong className="btn-strong">Login here</strong>
                     </NavLink>
                   </span>
                 </div>
