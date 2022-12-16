@@ -4,17 +4,16 @@ import HeaderBtnLogin from "./header_btn_login/index";
 import HeaderUser from "./header_user/index";
 import { useState, useEffect } from "react";
 
-function Header({ onLogOut}) {
+function Header({ onLogOut }) {
   // console.log('isLogin: ', isTrue);
-  const [User, setUser] = useState(false)
+  const [User, setUser] = useState(false);
   useEffect(() => {
-    const UserStore = localStorage.getItem('userId');
-    if(UserStore)
-      setUser(true)
-  },[User])
+    const UserStore = localStorage.getItem("userId");
+    if (UserStore) setUser(true);
+  }, [User]);
   const handlelogoutHeader = () => {
-    setUser(false)
-  }
+    setUser(false);
+  };
   return (
     <>
       <div className="heading">
@@ -33,50 +32,69 @@ function Header({ onLogOut}) {
               </NavLink>
             </li>
             <li className="heading__nav-item">
-              {User ? <NavLink
-                to="/books"
-                onClick={this}
-                className="heading__nav-item--link"
-              >
-                Books
-              </NavLink> : <p className="heading__nav-item--p">Books</p>}
+              {User ? (
+                <NavLink
+                  to="/books"
+                  onClick={this}
+                  className="heading__nav-item--link"
+                >
+                  Books
+                </NavLink>
+              ) : (
+                <p className="heading__nav-item--p">Books</p>
+              )}
             </li>
             <li className="heading__nav-item">
-              
-            {User ? <NavLink
-                to="/books"
-                onClick={this}
-                className="heading__nav-item--link"
-              >
-                About Author
-              </NavLink> : <p className="heading__nav-item--p">About Author</p>}
+              {User ? (
+                <NavLink
+                  to="/about"
+                  onClick={this}
+                  className="heading__nav-item--link"
+                >
+                  About Author
+                </NavLink>
+              ) : (
+                <p className="heading__nav-item--p">About Author</p>
+              )}
             </li>
             <li className="heading__nav-item">
-              
-            {User ? <NavLink
-                to="/books"
-                onClick={this}
-                className="heading__nav-item--link"
-              >
-                Blog
-              </NavLink> : <p className="heading__nav-item--p">Blog</p>}
-
+              {User ? (
+                <NavLink
+                  to="/blog"
+                  onClick={this}
+                  className="heading__nav-item--link"
+                >
+                  Blog
+                </NavLink>
+              ) : (
+                <p className="heading__nav-item--p">Blog</p>
+              )}
             </li>
             <li className="heading__nav-item">
-              
-            {User ? <NavLink
-                to="/books"
-                onClick={this}
-                className="heading__nav-item--link"
-              >
-                Contact
-              </NavLink> : <p className="heading__nav-item--p">Contact</p>}
+              {User ? (
+                <NavLink
+                  to="/contact"
+                  onClick={this}
+                  className="heading__nav-item--link"
+                >
+                  Contact
+                </NavLink>
+              ) : (
+                <p className="heading__nav-item--p">Contact</p>
+              )}
             </li>
           </ul>
         </div>
         <div className="heading__sub_nav">
           <div className="heading__sub_nav-user">
-            {User ? <HeaderUser onLogoutHeader={handlelogoutHeader} onLogOut2={onLogOut}/> : <HeaderBtnLogin />}
+            {User ? (
+              <HeaderUser
+                onLogoutHeader={handlelogoutHeader}
+                onLogOut2={onLogOut}
+              />
+            ) : (
+              <HeaderBtnLogin />
+            )}
           </div>
           <div className="heading__sub_nav--search">
             <input
