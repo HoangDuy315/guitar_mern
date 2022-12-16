@@ -91,7 +91,7 @@
 
 }
 
-strong {
+.btn-strong {
 
     margin: 0 8px;
     color: rgb(228, 74, 125);
@@ -99,7 +99,7 @@ strong {
     font-weight: 600;
 
 }
-strong:hover {
+.btn-strong:hover {
     opacity: .8;
 }
 .checkbox{

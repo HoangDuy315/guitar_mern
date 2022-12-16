@@ -38,8 +38,8 @@ function Header({ onLogOut}) {
                 onClick={this}
                 className="heading__nav-item--link"
               >
-                Books
-              </NavLink> : <p className="heading__nav-item--p">Books</p>}
+                Product
+              </NavLink> : <p className="heading__nav-item--p">Product</p>}
             </li>
             <li className="heading__nav-item">
               
@@ -48,8 +48,8 @@ function Header({ onLogOut}) {
                 onClick={this}
                 className="heading__nav-item--link"
               >
-                About Author
-              </NavLink > : <p className="heading__nav-item--p">About Author</p>}
+                About
+              </NavLink > : <p className="heading__nav-item--p">About</p>}
             </li>
             <li className="heading__nav-item">
               

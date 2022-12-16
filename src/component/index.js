@@ -10,6 +10,7 @@ export {default as QLUser} from './QLUser/QLUser';
 export {default as QLProduct} from './QLProduct/QLProduct';
 export {default as InforUser} from './InforUser/InforUser';
 export {default as DetailBook} from './detailBook/DetailBook';
+export {default as Terms} from './TermsService/Terms';
 
 
 

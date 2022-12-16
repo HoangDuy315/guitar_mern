@@ -2,8 +2,8 @@
 // import {OnlyComponents} from '../Layout'
 
 import {Login, Signup} from '../component/login_register';
-import { About, Contact, Books, Blog, Header, Home, Footer, QLUser, InforUser, QLProduct } from '../component';
-import Terms from '../component/TermsService/Terms';
+import { About, Contact, Books, Blog, Header, Home, Footer, QLUser, InforUser, QLProduct, Terms } from '../component';
+
 
 const publichRoutes = [
     { path: '/', component: Home },

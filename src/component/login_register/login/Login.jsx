@@ -66,41 +66,38 @@ function Login({ onLogin }) {
           
           <form onSubmit={handleLogin}>
             <div className="login-content">
-              <h1 className="login-title">Login</h1>
+              <h1 className="login-title">Login to your account</h1>
               <div className="login-input-form">
-                <span className="login-input-span">Username</span>
+                <span className="login-input-span"></span>
                 <input
                   type="text"
                   required
                   className="login-input-box"
-                  placeholder="Nhap username"
+                  placeholder="Username"
                   onChange={(e) => setName(e.target.value)}
                 ></input>
               </div>
               <div className="login-input-form">
-                <span className="login-input-span">Password</span>
+                <span className="login-input-span"></span>
                 <input
                   type="password"
                   required
                   className="login-input-box"
-                  placeholder="Nhap Password"
+                  placeholder="Password"
                   onChange={(e) => setPassword(e.target.value)}
                 ></input>
               </div>
               <button className="btn-login">Login</button>
               <div className="text__forgot mr-16">
-                <span>Forgot Password ?</span>
-              </div>
-              <div className="login__register-link mr-16">
-                <span className="">
-                  Don't have account ? click{" "}
+                <span className="text-forgotPW">
+                  Forgot Password ?
                   <NavLink className="navLink" to="/signup" onClick={this}>
-                    <strong>Here</strong>
+                    <strong>Create an account</strong>
                   </NavLink>
-                </span>
+                  </span>
               </div>
               <div className="login__more">
-                <span className="login__more-text">Login More</span>
+                <span className="login__more-text">Login With</span>
                 <div className="login__more-icon ">
                   <i className="fa fa-google google"></i>
                   <i className="fa fa-facebook facebook"></i>
