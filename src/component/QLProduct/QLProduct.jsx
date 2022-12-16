@@ -6,8 +6,9 @@ function QLProduct() {
   
   return (
     <div className="product">
+        <button className="add-product" onClick={() => setAddProduct(!addProduct)}>Thêm sản phẩm</button>
+    <div className="product">
       <h1 className="header">Quản Lý Sản Phẩm</h1>
-      <button className="add-product" onClick={() => setAddProduct(!addProduct)}>Thêm sản phẩm</button>
       {addProduct ? <FormAddProduct /> : <></>}
       
       <ul className="header-table">
@@ -65,6 +66,8 @@ function QLProduct() {
         </li>
 
       </ul>
+    </div>
+
     </div>
   );
 }
