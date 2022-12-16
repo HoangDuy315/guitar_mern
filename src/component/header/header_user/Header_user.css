@@ -17,6 +17,12 @@
 } */
 .Header_user-icon__cart {
   position: relative;
+
+}
+.fa.fa-user:hover,
+.fa.fa-shopping-cart:hover {
+  cursor: pointer;
+  color:rgb(0, 96, 223);
 }
 .shopping-cart__number {
   position: absolute;
@@ -44,6 +50,7 @@
     border-radius: 8px;
     background-color: rgb(225, 239, 252);
     z-index: 1;
+    list-style: none;
 }
 
 .user__list-item {

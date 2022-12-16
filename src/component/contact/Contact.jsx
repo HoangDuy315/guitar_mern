@@ -8,14 +8,14 @@ function Contact() {
       <section className="contact">
         <div className="content">
           <h2>Contact Us</h2>
-          <p>
+          <p className="ctact-content-p">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae
             laboriosam minima adipisci error voluptatum voluptatem nulla ad.
             Minima laudantium cum, in minus animi voluptatum provident repellat
             cupiditate nesciunt accusantium aut?
           </p>
         </div>
-        <div className="container">
+        <div className="ctact-container">
           <div className="contact-info">
             <div className="box">
               <div className="icon">
