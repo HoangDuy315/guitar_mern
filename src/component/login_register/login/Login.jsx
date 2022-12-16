@@ -92,7 +92,7 @@ function Login({ onLogin }) {
                 <span className="text-forgotPW">
                   Forgot Password ?
                   <NavLink className="navLink" to="/signup" onClick={this}>
-                    <strong>Create an account</strong>
+                    <strong> Create an account</strong>
                   </NavLink>
                   </span>
               </div>

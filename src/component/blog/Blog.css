@@ -1,4 +1,4 @@
-.blog {
+.about {
   width: 100%;
   min-height: 100vh;
   background-color: #ddd;
@@ -50,18 +50,20 @@
   margin-bottom: 40px;
 }
 
-.content-section .content .button a {
+.content-section .content .button button {
   background-color: #3d3d3d;
   padding: 12px 40px;
   text-decoration: none;
   color: #fff;
   font-size: 25px;
   letter-spacing: 1.5px;
+  border: none;
 }
 
-.content-section .content .button a:hover {
+.content-section .content .button button:hover {
   background-color: #a52a2a;
   color: #fff;
+  cursor: pointer;
 }
 
 .content-section .social {
@@ -76,6 +78,7 @@
 
 .content-section .social i:hover {
   color: #3d3d3d;
+  cursor: pointer;
 }
 
 @media screen and (max-width: 768px) {
