@@ -90,40 +90,38 @@
 }
 .modal-delete__header-btn {
   border: none;
-    font-size: 18px;
+  font-size: 18px;
 }
 .modal-delete__header-btn:hover {
-    color: red;
-    cursor: pointer;
+  color: red;
+  cursor: pointer;
 }
 .modal-delete__body {
-    height: 55%;
-    
+  height: 55%;
 }
 .modal-delete__footer {
-    display: flex;
-    height: 25%;
-    flex-direction: row-reverse;
-    padding: 8px 16px;
-    gap: 32px;
+  display: flex;
+  height: 25%;
+  flex-direction: row-reverse;
+  padding: 8px 16px;
+  gap: 32px;
 }
 .modal-delete__footer-btn {
-    padding: 0 12px;
-    font-size: 16px;
-    text-align: center;
-    border-radius: 4px;
-    border: 1px solid #ccc;
-    cursor: pointer;
+  padding: 0 12px;
+  font-size: 16px;
+  text-align: center;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  cursor: pointer;
 }
 
 .modal-delete__footer-btn:hover {
-    background-color: #d0e3f5;
+  background-color: #d0e3f5;
 }
 .modal--active {
-    color: white;
-    background-color: #3479BC;
+  color: white;
+  background-color: #3479bc;
 }
 .modal--active:hover {
-    background-color: #3c92e7;
-
+  background-color: #3c92e7;
 }

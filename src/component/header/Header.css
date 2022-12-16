@@ -6,7 +6,9 @@
   justify-content: space-between;
   align-items: center;
   padding: 0 70px;
+  padding-bottom: 22px;
   margin-top: 22px;
+  border-bottom: 4px solid white;
 }
 .heading__title {
   flex: 1;
@@ -53,6 +55,9 @@
   display: flex;
   gap: 32px;
   flex-direction: row-reverse;
+}
+.heading__sub_nav--search {
+  display: flex;
 }
 .heading__sub_nav--search-input {
   display: block;

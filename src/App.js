@@ -16,9 +16,9 @@ function App() {
       setIslogin(true)
       console.log("hello")
     } 
-
   },[render])
  
+
   const handleLogin = (data) => {
     setIslogin(true)
     console.log("login id " + data)
@@ -30,6 +30,7 @@ function App() {
     setRender(!render)
   };
 
+  
   return isLogin ? (
       <Routes>
       {privateRoutes.map((route, index) => {

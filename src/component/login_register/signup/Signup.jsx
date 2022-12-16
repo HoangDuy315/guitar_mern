@@ -89,52 +89,67 @@ function Signup() {
           <form onSubmit={handleSignup}>
             <div className="signup-container">
               <div className="signup-content">
-                <h1 className="signup-title">Sign Up</h1>
+                <h1 className="signup-title">Create Account</h1>
                 <div className="signup-input-form">
-                  <span className="signup-input-span">Username</span>
+                  <span className="signup-input-span"></span>
                   <input
                     type="text"
                     className="signup-input-box"
-                    placeholder="Enter Username"
+                    placeholder="Your Username"
                     value={inputName}
                     onChange={(e) => setName(e.target.value)}
                   ></input>
                 </div>
-
                 <div className="signup-input-form">
-                  <span className="signup-input-span">Password</span>
-                  <input
-                  required
-                    type="password"
-                    className="signup-input-box"
-                    placeholder="Enter Password"
-                    value={inputPassword}
-                    onChange={(e) => setPassword(e.target.value)}
-                  ></input>
-                </div>
-                <div className="signup-input-form">
-                  <span className="signup-input-span">Email</span>
+                  <span className="signup-input-span"></span>
                   <input
                     type="email"
                     required
                     className="signup-input-box"
-                    placeholder="Enter your email"
+                    placeholder="Your email"
                     value={inputEmail}
                     onChange={(e) => setEmail(e.target.value)}
                   ></input>
                 </div>
+                <div className="signup-input-form">
+                  <span className="signup-input-span"></span>
+                  <input
+                  required
+                    type="password"
+                    className="signup-input-box"
+                    placeholder="Your Password"
+                    value={inputPassword}
+                    onChange={(e) => setPassword(e.target.value)}
+                  ></input>
+                </div>
+                <div>
+                  <input required type="checkbox" name="" className="checkbox"></input>
+                  <span className="btn-checkbox">
+                    I argee all statement in{""}
+                    <NavLink
+                      className="NavLink__to-term"
+                      to="/terms"
+                      onClick={this}>
+                    
+                      <strong>Terms of service</strong>
+                    </NavLink>
+
+                  </span>
+                </div>
+                
+             
                 <button className="btn-signup" >
                     Sign Up
                 </button>
                 <div className="signup__have-account">
                   <span>
-                    You already have account{" "}
+                    Have already an account?{" "}
                     <NavLink
                       className="NavLink__to-login"
                       to="/login"
                       onClick={this}
                     >
-                      <strong>login</strong>
+                      <strong className="btn-strong">Login here</strong>
                     </NavLink>
                   </span>
                 </div>

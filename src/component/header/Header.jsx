@@ -32,56 +32,45 @@ function Header({ onLogOut }) {
               </NavLink>
             </li>
             <li className="heading__nav-item">
-              {User ? (
-                <NavLink
-                  to="/books"
-                  onClick={this}
-                  className="heading__nav-item--link"
-                >
-                  Books
-                </NavLink>
-              ) : (
-                <p className="heading__nav-item--p">Books</p>
-              )}
+              {User ? <NavLink
+                to="/books"
+                onClick={this}
+                className="heading__nav-item--link"
+              >
+                Product
+              </NavLink> : <p className="heading__nav-item--p">Product</p>}
             </li>
             <li className="heading__nav-item">
-              {User ? (
-                <NavLink
-                  to="/about"
-                  onClick={this}
-                  className="heading__nav-item--link"
-                >
-                  About Author
-                </NavLink>
-              ) : (
-                <p className="heading__nav-item--p">About Author</p>
-              )}
+              
+            {User ? <NavLink
+                to="/about"
+                onClick={this}
+                className="heading__nav-item--link"
+              >
+                About
+              </NavLink > : <p className="heading__nav-item--p">About</p>}
             </li>
             <li className="heading__nav-item">
-              {User ? (
-                <NavLink
-                  to="/blog"
-                  onClick={this}
-                  className="heading__nav-item--link"
-                >
-                  Blog
-                </NavLink>
-              ) : (
-                <p className="heading__nav-item--p">Blog</p>
-              )}
+              
+            {User ? <NavLink
+                to="/blog"
+                onClick={this}
+                className="heading__nav-item--link"
+              >
+                Blog
+              </NavLink> : <p className="heading__nav-item--p">Blog</p>}
+
             </li>
             <li className="heading__nav-item">
-              {User ? (
-                <NavLink
-                  to="/contact"
-                  onClick={this}
-                  className="heading__nav-item--link"
-                >
-                  Contact
-                </NavLink>
-              ) : (
-                <p className="heading__nav-item--p">Contact</p>
-              )}
+              
+            {User ? <NavLink
+                to="/contact"
+                onClick={this}
+                className="heading__nav-item--link"
+              >
+                Contact
+              </NavLink> : <p className="heading__nav-item--p">Contact</p>}
+
             </li>
           </ul>
         </div>
