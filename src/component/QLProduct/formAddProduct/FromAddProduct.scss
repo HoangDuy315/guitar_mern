@@ -1,52 +1,58 @@
-
 .product-container {
-    width: auto;
-    background-color: #F0F5F8;
-    position: relative;
-    box-sizing: border-box;
-    margin-left: 200px;
-    margin-right: 200px;
+  width: auto;
+  background-color: #f0f5f8;
+  position: relative;
+  box-sizing: border-box;
+  margin: 0 25%;
+  margin-top: 5%;
+  z-index: 10;
 
-    .input-title{
-        margin-left: 23%;
-        font-size: 20px;
-        font-weight: 600;
-        color: rgb(228, 74, 125);
-        margin-top: 20px;
+  .input-title {
+    margin-left: 23%;
+    font-size: 20px;
+    font-weight: 600;
+    color: rgba(0, 0, 0, 0.767);
+  }
+  .input-product {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin: 20px;
+
+    input {
+      width: 100%;
+      height: 30px;
+      outline: none;
+      border-radius: 3px;
+      border: none;
     }
-    .input-product{
-        display: flex;
-        flex-direction: column;
-        gap: 5px;
-        margin-bottom: 10px;
-        margin-left: 20px;
-        margin-right: 20px;
-        
-        input{
-            width: 100%;
-            height: 30px;
-            outline: none;
-            border-radius: 3px;
-            border: none;
-        }
-        
+  }
+  .btn-button {
+    display: flex;
+    justify-content: space-around;
+    margin: 12px 0;
+    .btn-button-add__product {
+      cursor: pointer;
+      margin-bottom: 15px;
+      bottom: 0;
+      font-size: 18px;
+      padding: 5px;
+      color: rgb(0, 0, 0);
+      border: 2px solid rgb(173, 171, 172);
+      border-radius: 4px;
+      font-weight: 600;
+      opacity: 0.8;
+      background-color: rgb(255, 251, 252);
     }
-    .btn-button{
-        .btn-button-add__product{
-            cursor: pointer;
-            margin-left: 75%;
-            margin-bottom: 15px;
-            bottom: 0;
-            font-size: 18px;
-            padding: 5px;
-            color: white;
-            border: 2px solid rgb(228, 74, 125);
-            border-radius: 8px;
-            font-weight: 600;
-            opacity: .8;
-            background-color: rgb(228, 74, 125);
-        }
+    :hover {
+      background-color: rgb(219, 71, 71);
+      color: rgb(243, 243, 243);
+      border: 2px solid rgb(219, 71, 71);
     }
+    .add:hover {
+      background-color: rgba(6, 38, 221, 0.781);
+      border: 2px solid rgba(6, 38, 221, 0.747);
+      color: rgb(243, 243, 243);
+    }
+  }
 }
-
-

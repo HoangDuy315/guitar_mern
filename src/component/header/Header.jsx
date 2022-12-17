@@ -3,6 +3,7 @@ import { NavLink } from "react-router-dom";
 import HeaderBtnLogin from "./header_btn_login/index";
 import HeaderUser from "./header_user/index";
 import { useState, useEffect } from "react";
+import logo from "../header/logo.png"
 
 function Header({ onLogOut }) {
   // console.log('isLogin: ', isTrue);
@@ -18,7 +19,7 @@ function Header({ onLogOut }) {
     <>
       <div className="heading">
         <div className="heading__title">
-          <h1 className="heading__title-text">Thuan Hai</h1>
+          <img src={logo} className="logo-img"></img>
         </div>
         <div className="heading__nav">
           <ul className="heading__nav-list">

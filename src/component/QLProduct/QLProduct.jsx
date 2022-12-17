@@ -3,14 +3,16 @@ import FormAddProduct from "./formAddProduct/FromAddProduct";
 import { useState } from "react";
 function QLProduct() {
   const [addProduct, setAddProduct] = useState(false)
+  const handleChangeAddProduct = () => {
+    setAddProduct(!addProduct)
+  }
   
   return (
     <div className="product">
         <button className="add-product" onClick={() => setAddProduct(!addProduct)}>Thêm sản phẩm</button>
     <div className="product">
       <h1 className="header">Quản Lý Sản Phẩm</h1>
-      {addProduct ? <FormAddProduct /> : <></>}
-      
+      {addProduct ? <FormAddProduct onhandleProduct = {handleChangeAddProduct}/> : <>
       <ul className="header-table">
         <li className="stt">STT</li>
         <li className="name">Tên sản phẩm</li>
@@ -66,6 +68,9 @@ function QLProduct() {
         </li>
 
       </ul>
+      </>}
+
+      
     </div>
 
     </div>

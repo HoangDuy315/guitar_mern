@@ -131,7 +131,7 @@ function Signup() {
                       to="/terms"
                       onClick={this}>
                     
-                      <strong>Terms of service</strong>
+                      <strong> Terms of service</strong>
                     </NavLink>
 
                   </span>
