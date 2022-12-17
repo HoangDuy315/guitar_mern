@@ -16,6 +16,7 @@ let random = Math.floor(Math.random() * ImgLogin.length);
 function Signup() {
   const [inputName, setName] = useState("");
   const [inputPassword, setPassword] = useState("");
+  const [inputConfirmPassword, setConfirmPassword] = useState("");
   const [inputEmail, setEmail] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const navigate = useNavigate();
@@ -35,47 +36,56 @@ function Signup() {
   const handleSignup = (e) => {
     setIsLoading(true)
     e.preventDefault();
-    dataUser = {
-      name: inputName,
-      password: inputPassword,
-      email: inputEmail,
-    };
-    // console.log(dataUser);
-
-  fetch(`${process.env.REACT_APP_API}/api/signup`, {
-    method:  'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify(dataUser)
-  })
-  .then(data => data.json())
-  .then(data => {
-    if(data.status === 200 )
-      {
-        alert("Success")
-      setIsLoading(false)
-
-        navigate("/login", { replace: true });
-
-      }
     
-    else {
-      if(data.status === 401 )
-      {
-      setIsLoading(false)
-      alert("Username đã tồn tại")
+    if(inputPassword === inputConfirmPassword) {
+      dataUser = {
+        name: inputName,
+        password: inputPassword,
+        email: inputEmail,
+      };
+      // console.log(dataUser);
+  
+    fetch(`${process.env.REACT_APP_API}/api/signup`, {
+      method:  'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(dataUser)
+    })
+    .then(data => data.json())
+    .then(data => {
+      if(data.status === 200 )
+        {
+          alert("Success")
+          setIsLoading(false)
+          
+          navigate("/login", { replace: true });
+  
+        }
+      
+      else {
+        if(data.status === 401 )
+        {
+        setIsLoading(false)
+        alert("Username đã tồn tại")
+        }
+      
+        if(data.status === 402 )
+        {
+        setIsLoading(false)
+        alert("Email đã tồn tại")
+        }
       }
-    
-      if(data.status === 402 )
-      {
-      setIsLoading(false)
-      alert("Email đã tồn tại")
-      }
+    })
+    .catch(err => console.log(err.data))
+  
+  
     }
-  })
-  .catch(err => console.log(err.data))
+    else {
+      alert("Xác nhận mật khẩu không đúng !")
+      setIsLoading(false)
 
+    }
 
 
   };
@@ -122,15 +132,25 @@ function Signup() {
                     onChange={(e) => setPassword(e.target.value)}
                   ></input>
                 </div>
+                <div className="signup-input-form">
+                  <span className="signup-input-span"></span>
+                  <input
+                  required
+                    type="password"
+                    className="signup-input-box"
+                    placeholder="Confirm Your Password"
+                    value={inputConfirmPassword}
+                    onChange={(e) => setConfirmPassword(e.target.value)}
+                  ></input>
+                </div>
                 <div>
-                  <input required type="checkbox" name="" className="checkbox"></input>
+                  <input required type="checkbox" className="checkbox" />
                   <span className="btn-checkbox">
                     I argee all statement in{""}
                     <NavLink
                       className="NavLink__to-term"
                       to="/terms"
                       onClick={this}>
-                    
                       <strong> Terms of service</strong>
                     </NavLink>
 
