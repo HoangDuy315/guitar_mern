@@ -62,7 +62,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: gray;
+  background: rgb(199, 199, 199);
   border-radius: 50%;
   font-size: 22px;
 }
@@ -159,4 +159,20 @@
   .contact-form {
     width: 100%;
   }
+}
+
+.inputBox-footer {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+}
+.inputBox-success {
+  font-weight: 600;
+  font-size: 20px;
+  color: #00be20;
+}
+.inputBox-fail {
+  font-weight: 600;
+  font-size: 20px;
+  color: #ff1e00;
 }

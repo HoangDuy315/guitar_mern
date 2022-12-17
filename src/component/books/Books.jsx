@@ -57,7 +57,7 @@ function Books() {
             </div>
           </div>
           <div className="book__container">
-            <div className="book__container-subnav">
+            {/* <div className="book__container-subnav">
               <div className="book__container-subnav--box">
                 <i className="fa-solid fa-list-ul"></i>
                 <h3 className="book__container-subnav--title">Danh Muc</h3>
@@ -70,7 +70,7 @@ function Books() {
                 <li className="book__container-subnav__item" >Truyện Ngôn Tình</li>
                 <li className="book__container-subnav__item" >Truyện Nước Ngoài</li>
               </ul>
-            </div>
+            </div> */}
             <div id="book__container-content">
             <Page1 page={pageNumber}/>
             

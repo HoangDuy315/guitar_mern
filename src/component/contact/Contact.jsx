@@ -2,14 +2,15 @@ import "./Contact.css";
 import { AiOutlineMail, AiOutlinePhone } from "react-icons/ai";
 import { GoLocation } from "react-icons/go";
 import emailjs from "@emailjs/browser";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 
 function Contact() {
+  const [showMessage, setShowMessage] = useState(false);
+  const [isSuccess, setIsSuccess] = useState();
   const form = useRef();
 
   const sendEmail = (e) => {
     e.preventDefault();
-
     emailjs
       .sendForm(
         "service_l2eap1s",
@@ -20,12 +21,19 @@ function Contact() {
       .then(
         (result) => {
           console.log(result.text);
-        },
+          setIsSuccess(true);
+          setShowMessage(true);
+  },
         (error) => {
           console.log(error.text);
-        }
+          setIsSuccess(false);
+          setShowMessage(true);
+      }
       );
+    setTimeout(() => {
     e.target.reset();
+    setShowMessage(false);
+    }, 3000);
   };
 
   return (
@@ -48,7 +56,7 @@ function Contact() {
               </div>
               <div className="text">
                 <h3>Address</h3>
-                <p>6 Linh Trung Ward, Thu Duc City</p>
+                <p>UIT, HCM City</p>
               </div>
             </div>
 
@@ -58,7 +66,7 @@ function Contact() {
               </div>
               <div className="text">
                 <h3>Phone</h3>
-                <p> 0123JQK</p>
+                <p> 0111.222.333</p>
               </div>
             </div>
 
@@ -68,7 +76,7 @@ function Contact() {
               </div>
               <div className="text">
                 <h3>Email</h3>
-                <p> JQK@gmail.com</p>
+                <p> 1951425@gm.uit.edu.vn</p>
               </div>
             </div>
           </div>
@@ -80,15 +88,24 @@ function Contact() {
                 <span className="span">Full name</span>
               </div>
               <div className="inputBox">
-                <input type="text" name="email" required="required" />
+                <input type="text" name="email" required="required"/>
                 <span className="span">Email </span>
               </div>
               <div className="inputBox">
-                <textarea required="required" name="message"></textarea>
+                <textarea name="message" required="required"></textarea>
                 <span className="span"> Type your Message...</span>
               </div>
-              <div className="inputBox">
+              <div className="inputBox inputBox-footer">
                 <input type="submit" value="Send" />
+                {showMessage ? (
+                  isSuccess ? (
+                    <p className="inputBox-success">Send Successfully !</p>
+                  ) : (
+                    <p className="inputBox-fail">Send Fail !</p>
+                  )
+                ) : (
+                  <></>
+                )}
               </div>
             </form>
           </div>
