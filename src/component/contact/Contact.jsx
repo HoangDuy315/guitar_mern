@@ -1,8 +1,33 @@
 import "./Contact.css";
 import { AiOutlineMail, AiOutlinePhone } from "react-icons/ai";
 import { GoLocation } from "react-icons/go";
+import emailjs from "@emailjs/browser";
+import { useRef } from "react";
 
 function Contact() {
+  const form = useRef();
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm(
+        "service_l2eap1s",
+        "template_mwxqsjq",
+        form.current,
+        "JGEI8C-AOmEuV8bQu"
+      )
+      .then(
+        (result) => {
+          console.log(result.text);
+        },
+        (error) => {
+          console.log(error.text);
+        }
+      );
+    e.target.reset();
+  };
+
   return (
     <div className="ctact">
       <section className="contact">
@@ -48,18 +73,18 @@ function Contact() {
             </div>
           </div>
           <div className="contact-form">
-            <form action="">
+            <form action="" ref={form} onSubmit={sendEmail}>
               <h2>Send Messages</h2>
               <div className="inputBox">
-                <input type="text" name="" required="required" />
+                <input type="text" name="name" required="required" />
                 <span className="span">Full name</span>
               </div>
               <div className="inputBox">
-                <input type="text" name="" required="required" />
+                <input type="text" name="email" required="required" />
                 <span className="span">Email </span>
               </div>
               <div className="inputBox">
-                <textarea required="required"></textarea>
+                <textarea required="required" name="message"></textarea>
                 <span className="span"> Type your Message...</span>
               </div>
               <div className="inputBox">
