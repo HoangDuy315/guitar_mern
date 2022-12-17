@@ -2,7 +2,7 @@
   {
     id:1,
     name: "Guitar Suzuki SDG-6BK (Acoustic)",
-    urlImg: "https://vietthuongshop.vn/image/cache/catalog/2-san-pham/dan-guitar/tanglewood/tanglewoodguitars-twbbsde-01-400x400.jpg",
+    urlImg: "https://upload-img-theta.vercel.app/guitar.png",
     quantity: "10",
     price: 2500000,
     color: "Black",
@@ -12,7 +12,7 @@
   {
     id:2,
     name: 'Cordoba Protégé C1 Matiz - Coral',
-    urlImg: "https://vietthuongshop.vn/image/cache/catalog/cordoba-protege-c1-matiz-coral-2-400x400.jpg",
+    urlImg: "https://upload-img-theta.vercel.app/guitar2.png",
     quantity: 6,
     price: 6800000,
     color: "pink",
@@ -22,7 +22,7 @@
   {
     id:3,
     name: 'Taylor AD17E',
-    urlImg: 'https://vietthuongshop.vn/image/cache/catalog/Taylor_AD17E-400x400.png',
+    urlImg: 'https://upload-img-theta.vercel.app/guitar3.png',
     quantity: 4,
     price: 44000000,
     color: "yellow",
