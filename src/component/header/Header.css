@@ -10,6 +10,12 @@
   margin-top: 22px;
   border-bottom: 4px solid white;
 }
+.logo-img{
+  width: 30%;
+  height: 30%;
+  margin: 0 25%;
+}
+
 .heading__title {
   flex: 1;
   font-family: 'Pacifico', cursive;
