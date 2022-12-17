@@ -7,10 +7,10 @@ function Page1({ page }) {
   const [guitars, setBooks] = useState([]);
 
   useEffect(() => {
-    fetch(`${process.env.REACT_APP_API}/api/get`)
+    fetch(`${process.env.REACT_APP_API}/api/getallproduct`)
     .then((res) => res.json())
     .then((res) =>{
-        setBooks(res)
+        setBooks(res.reverse())
         console.log(res)
     })
   }, [])

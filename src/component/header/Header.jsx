@@ -19,7 +19,7 @@ function Header({ onLogOut }) {
     <>
       <div className="heading">
         <div className="heading__title">
-          <img src={logo} className="logo-img"></img>
+          <img src={logo} className="logo-img" alt="Guitar logo" />
         </div>
         <div className="heading__nav">
           <ul className="heading__nav-list">
