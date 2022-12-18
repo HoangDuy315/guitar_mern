@@ -6,6 +6,8 @@ import { publichRoutes, privateRoutes } from "./routes";
 import {DefaultLayout} from "./Layout";
 
 
+
+
 function App() {
   const [isLogin, setIslogin] = useState(false)
   const [render , setRender] = useState(false)
@@ -30,6 +32,7 @@ function App() {
     setRender(!render)
   };
 
+  
   
   return isLogin ? (
       <Routes>
