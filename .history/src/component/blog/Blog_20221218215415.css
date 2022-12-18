@@ -1,0 +1,12 @@
+.blog .box-container .box {
+  border: 1px solid black;
+  text-align: center;
+  padding: 2rem;
+}
+
+.blog .box-container .box p {
+  font-size: 1.6rem;
+  line-height: 1.8;
+  color: #ccc;
+  padding: 2rem 0;
+}

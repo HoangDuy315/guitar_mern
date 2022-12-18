@@ -1,4 +1,5 @@
 import "./Blog.css";
+import { BsFacebook, BsGithub, BsInstagram, BsTwitter } from "react-icons/bs";
 
 function Blog() {
   return (
@@ -6,7 +7,7 @@ function Blog() {
       <div className="container">
         <div className="content-section">
           <div className="title">
-            <h2>My Blogs</h2>
+            <h2>About Us</h2>
           </div>
           <div className="content">
             <h3>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</h3>
@@ -17,8 +18,22 @@ function Blog() {
               magnam nulla in amet libero!
             </p>
             <div className="button">
-              <button>More Detail</button>
+              <button>Read More</button>
             </div>
+          </div>
+          <div className="social">
+            <i>
+              <BsFacebook />
+            </i>
+            <i>
+              <BsTwitter />
+            </i>
+            <i>
+              <BsInstagram />
+            </i>
+            <i>
+              <BsGithub />
+            </i>
           </div>
         </div>
         <div className="image-section">

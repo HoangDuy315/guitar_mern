@@ -1,4 +1,5 @@
 import "./Blog.css";
+import { BsFacebook, BsGithub, BsInstagram, BsTwitter } from "react-icons/bs";
 
 function Blog() {
   return (

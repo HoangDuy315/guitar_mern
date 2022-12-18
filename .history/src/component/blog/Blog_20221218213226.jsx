@@ -6,7 +6,7 @@ function Blog() {
       <div className="container">
         <div className="content-section">
           <div className="title">
-            <h2>My Blogs</h2>
+            <h2>About Us</h2>
           </div>
           <div className="content">
             <h3>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</h3>
@@ -16,14 +16,11 @@ function Blog() {
               aliquid enim ea veritatis adipisci iste minus illum cum fugiat,
               magnam nulla in amet libero!
             </p>
-            <div className="button">
-              <button>More Detail</button>
-            </div>
           </div>
         </div>
         <div className="image-section">
           <img
-            src="https://www.mycarpaltunnel.com/wp-content/webp-express/webp-images/doc-root/wp-content/uploads/2014/03/Musician-in-Texas-Finds-Carpal-Tunnel-Relief.png.webp"
+            src="https://cdn.searchenginejournal.com/wp-content/uploads/2012/12/blogging.jpg"
             alt=""
           />
         </div>
