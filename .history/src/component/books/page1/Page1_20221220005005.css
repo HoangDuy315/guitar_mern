@@ -4,10 +4,9 @@
     text-align: left;
     flex-wrap: wrap;
     width: 1080px;
-    margin-top: 50px;
-    margin-left: 130px;
-    justify-content: space-between;
-    gap: 50px;
+    margin-left: 50px;
+    justify-content: flex-start;
+    gap: 30px;
 }
 .product-item {
     width: 260px;
@@ -70,7 +69,7 @@
 .action-box button .product-btn-buy:hover {
     color: white;
     cursor: pointer;
-    background-color: #78bcec;
+    background-color: #12596e;
     color: rgb(104, 104, 104);
 }
 .action-box button .active {

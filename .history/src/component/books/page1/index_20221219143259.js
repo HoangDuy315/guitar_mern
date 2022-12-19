@@ -86,9 +86,9 @@ function Page1({ page }) {
                     <strong>{guitar.author || "Đang cập nhật ..."}</strong>
                   </p>
                   <p className="product-price">
-                    Giá: <strong>{guitar.price}đ</strong>
+                    Giá <strong>{guitar.price}đ</strong>
                   </p>
-                  {/* <p className="product-available">
+                  <p className="product-available">
                     {guitar.availableNumber
                       ? `Còn: ${guitar.availableNumber} quyển`
                       : "Hết Hàng !"}
@@ -97,7 +97,7 @@ function Page1({ page }) {
                     {guitar.soldNumber
                       ? `Đã bán: ${guitar.soldNumber} quyển`
                       : "Chưa bán được gì !"}
-                  </p> */}
+                  </p>
                 </div>
                 <div className="action-box">
                  <button onClick={() => handleGetProductID(guitar._id)}> <Link className="product-btn-buy active">Add to Cart</Link></button>
