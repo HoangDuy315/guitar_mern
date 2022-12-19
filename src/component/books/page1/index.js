@@ -2,42 +2,49 @@ import "./Page1.css";
 import { useState, useEffect } from "react";
 import {Link, useLocation} from 'react-router-dom'
 
+
 function Page1({ page }) {
   let url = useLocation()
   const [guitars, setBooks] = useState([]);
-
+  const [User, setUser] = useState()
+  const getUser = localStorage.getItem('userId')
 
   useEffect(() => {
     fetch(`${process.env.REACT_APP_API}/api/getallproduct`)
     .then((res) => res.json())
     .then((res) =>{
         setBooks(res.reverse())
-        console.log(res)
     })
+
+
+    fetch(`${process.env.REACT_APP_API}/api/getoneuser/` + getUser)
+      .then(res => res.json())
+      .then(res => {
+        setUser(res)
+        
+        console.log(User);
+      })
+
+
   }, [])
 
   const handleGetProductID = (ID) => {
-    console.log(ID);
-    let User = {};
-    const getUser = localStorage.getItem('userId')
-    fetch(`${process.env.REACT_APP_API}/api/getoneuser` + getUser)
-      .then(res => res.json())
-      .then(res => console.log(res))
-
-    if(User.Cart)
-      {
-        User.Cart = [...User.Cart, ID]
+      console.log(ID);
+    let DaataFake = User;
+      if(User.Cart && User.Cart.length > 0) {
+        console.log("haven Cart");
+        setUser({})
+        DaataFake.Cart = [...DaataFake.Cart, ID]
       }
       else {
-        User.Cart = [ID]
+        console.log("haven't Cart");
+        DaataFake.Cart = [ID]
       }
-
+   
 
       fetch(`${process.env.REACT_APP_API}/api/updatesser/` + getUser, {
         method: "PATCH",
-       body: JSON.stringify({
-        numberCourses: User,
-      }),
+        body: JSON.stringify(DaataFake),
       headers: {
         "Content-type": "application/json; charset=UTF-8",
       },
@@ -46,24 +53,13 @@ function Page1({ page }) {
       .then(res => {
         if(res.status === 200)
         {
-          console.log(res.message);
+          alert("Add Product Successfully !");
+          window.location.reload();
+
         }
-        else console.log(res.message);
+        else alert(`${res.message}`);
+
       })
-
-    //Update Course trong user
-    // fetch(`http://localhost:3002/api/updateUser/` + getUser, {
-    //   method: "PATCH",
-    //   body: JSON.stringify({
-    //     numberCourses: listCourse,
-    //   }),
-    //   headers: {
-    //     "Content-type": "application/json; charset=UTF-8",
-    //   },
-    // })
-
-
-
 
     const idProduct = localStorage.getItem('productId')
     if(idProduct) {
