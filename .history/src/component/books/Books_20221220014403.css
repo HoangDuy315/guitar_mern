@@ -26,7 +26,7 @@
     .book__nav--list {
         display: flex;
         margin: 22px 0;
-        /* margin-left: 135px; */
+        margin-left: 135px;
         gap: 2px;
         
     }
