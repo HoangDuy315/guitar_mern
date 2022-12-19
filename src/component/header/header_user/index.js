@@ -13,7 +13,9 @@ function Header_user({onLogoutHeader, onLogOut2}) {
   console.log("heelo " +UserStore)
 
 
-  fetch(`${process.env.REACT_APP_API}/api/getoneuser`+ UserStore)
+  fetch(`${process.env.REACT_APP_API}/api/getoneuser/`+ UserStore, {
+    method: "GET"
+  })
   .then(res => res.json())
   .then(res => {
     setUser(res)
