@@ -4,10 +4,9 @@
     text-align: left;
     flex-wrap: wrap;
     width: 1080px;
-    margin-top: 50px;
-    margin-left: 130px;
+    margin-left: 50px;
     justify-content: space-between;
-    gap: 50px;
+    gap: 30px;
 }
 .product-item {
     width: 260px;
