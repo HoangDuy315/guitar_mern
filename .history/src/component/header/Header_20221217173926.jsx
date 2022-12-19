@@ -51,7 +51,7 @@ function Header({ onLogOut }) {
                 About
               </NavLink > : <p className="heading__nav-item--p">About</p>}
             </li>
-            {/* <li className="heading__nav-item">
+            <li className="heading__nav-item">
               
             {User ? <NavLink
                 to="/blog"
@@ -61,7 +61,7 @@ function Header({ onLogOut }) {
                 Blog
               </NavLink> : <p className="heading__nav-item--p">Blog</p>}
 
-            </li> */}
+            </li>
             <li className="heading__nav-item">
               
             {User ? <NavLink
