@@ -27,8 +27,8 @@
         display: flex;
         margin: 22px 0;
         margin-left: 135px;
-        gap: 2px;
-        
+        gap: 3px;
+        border-radius: 10px;
     }
     .book__nav--item {
         min-width: 150px;

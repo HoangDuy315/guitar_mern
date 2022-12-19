@@ -25,10 +25,9 @@
     }
     .book__nav--list {
         display: flex;
-        margin: 22px 0;
+        margin: 20px 0;
         margin-left: 135px;
-        gap: 2px;
-        
+        gap: 3px;
     }
     .book__nav--item {
         min-width: 150px;
