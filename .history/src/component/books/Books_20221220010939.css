@@ -35,7 +35,7 @@
     .book__nav--item {
         min-width: 150px;
         height: 44px;
-        display: block;
+        display: flex;
         background-color: white;
         text-align: center;
         line-height: 44px;
@@ -71,11 +71,9 @@
     .book__nav__direc--item {
     
         background-color: white;
+        align-items: center;
         width: 50px;
         height: 44px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
     }
     .book__nav__direc--link {
         font-size: 26px;
