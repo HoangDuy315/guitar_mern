@@ -4,7 +4,7 @@ import './Books.css'
 import {useState} from 'react'
 
 
-function Books() {
+function Guitar() {
   const [pageNumber, setPageNumber] = useState(1)
   const handlePageLeft = () => {
     if(pageNumber < 2)
@@ -81,4 +81,4 @@ function Books() {
     </>
   );
 }
-export default Books;
+export default Guitar;

@@ -2,7 +2,8 @@ import "./Signup.css";
 import { NavLink, useNavigate} from "react-router-dom";
 import { useState, useEffect } from "react";
 import ImgLogin from "../img/index.js"
-import {Loading} from '../../index'
+import Loading from '../loading/Loading'
+
 
 
 
