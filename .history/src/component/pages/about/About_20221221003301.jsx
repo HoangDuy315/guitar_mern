@@ -38,7 +38,7 @@ function About() {
         </div>
         <div className="image-section">
           <img
-            src="https://th.bing.com/th/id/R.2ad5043af3a68c1945b6b9a74c260584?rik=iiiJtMkzahZLfg&pid=ImgRaw&r=0"
+            src="https://cdn.searchenginejournal.com/wp-content/uploads/2012/12/blogging.jpg"
             alt=""
           />
         </div>
