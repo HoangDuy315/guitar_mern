@@ -1,6 +1,6 @@
 import "./QLUser.css";
 import { useState, useEffect } from "react";
-import defaulyAvatar from "./user.svg";
+import defaulyAvatar from "./avatardefault.svg";
 
 function QLUer() {
   const [listUser, setListUser] = useState([]);
