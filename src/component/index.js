@@ -1,15 +1,16 @@
 
-export {default as Blog} from './blog/Blog';
+export {default as Blog} from './pages/blog/Blog';
 export {default as Header} from './header/Header';
-export {default as Books} from './books/Books';
-export {default as Contact} from './contact/Contact';
+export {default as Guitar} from './pages/guitar/Guitar';
+export {default as Contact} from './pages/contact/Contact';
 export {default as Footer} from './footer/Footer';
-export {default as Home} from './home/Home';
-export {default as About} from './about/About';
-export {default as Loading} from './loading/Loading';
-export {default as QLUser} from './QLUser/QLUser';
-export {default as QLProduct} from './QLProduct/QLProduct';
-export {default as InforUser} from './InforUser/InforUser';
-export {default as DetailBook} from './detailBook/DetailBook';
-export {default as Terms} from './TermsService/Terms';
+export {default as Home} from './pages/home/Home';
+export {default as Cart} from './pages/cart/Cart';
+export {default as About} from './pages/about/About';
+export {default as Loading} from './more/loading/Loading';
+export {default as QLUser} from './user/QLUser/QLUser';
+export {default as QLProduct} from './product/QLProduct/QLProduct';
+export {default as InforUser} from './user/InforUser/InforUser';
+export {default as DetailBook} from './product/detailBook/DetailBook';
+export {default as Terms} from './pages/login_register/TermsService/Terms';
 

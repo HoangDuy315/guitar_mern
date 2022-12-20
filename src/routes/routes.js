@@ -1,8 +1,8 @@
 
 // import {OnlyComponents} from '../Layout'
 
-import {Login, Signup} from '../component/login_register';
-import { About, Contact, Books, Blog, Header, Home, Footer, QLUser, InforUser, QLProduct, Terms } from '../component';
+import {Login, Signup} from '../component/pages/login_register/index';
+import { About, Contact, Guitar, Blog, Header, Home, Footer, QLUser, InforUser, QLProduct, Terms, Cart } from '../component/index';
 
 
 const publichRoutes = [
@@ -17,12 +17,13 @@ const  privateRoutes = [
     { path: '/header', component: Header },
     { path: '/footer', component: Footer },
     { path: '/about', component: About},
-    { path: '/books', component: Books},
+    { path: '/guitar', component: Guitar},
     { path: '/blog', component: Blog },
     { path: '/contact', component: Contact },
     { path: '/qluser', component: QLUser },
     { path: '/qlproduct', component: QLProduct },
     { path: '/inforuser', component: InforUser },
+    { path: '/cart', component: Cart },
 ]
 
 export {publichRoutes, privateRoutes}
