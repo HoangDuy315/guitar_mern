@@ -1,0 +1,35 @@
+.checkout {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+  text-transform: capitalize;
+  transition: all 0.2s linear;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 280px;
+  min-height: 100vh;
+  padding-bottom: 70px;
+}
+
+.container form {
+  padding: 50px;
+  width: 700px;
+  background: #fff;
+  box-shadow: 0 5px 10px black;
+}
+
+.container form .row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.container form .row .col {
+  flex: 1 1 250px;
+}

@@ -1,0 +1,18 @@
+.checkout {
+  width: 100vw;
+  min-height: 100vh;
+  background: #34495e;
+  font-size: 1.3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  background: white;
+  max-width: 800;
+  min-height: 500;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
