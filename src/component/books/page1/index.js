@@ -71,7 +71,7 @@ function Page1({ page }) {
     <>
       <ul className="product-list">
         {guitars.map((guitar, index) => {
-          if ((page - 1) * 8 <= index && index < page * 8) {
+          if ((page - 1) * 6 <= index && index < page * 6) {
             return (
               <li className="product-item" key={index}>
                 <img

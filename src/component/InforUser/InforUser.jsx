@@ -1,6 +1,8 @@
 import "./InforUser.scss";
 import { useState, useEffect } from "react";
 import defaulyAvatar from "./user.svg";
+import { ref, getDownloadURL, uploadBytesResumable } from "firebase/storage";
+import storage from "../QLProduct/formAddProduct/firebaseConfig";
 
 function InforUser() {
   const [user, setUser] = useState();
@@ -15,8 +17,65 @@ function InforUser() {
       });
   }, []);
 
+  const [file, setFile] = useState();
+  const [showprocesss, setShowProcess] = useState(false);
+  const [progresspercent, setProgresspercent] = useState(0);
+
+//------------
+const handlesubmit = (e) => {
+  e.preventDefault();
+  setShowProcess(true);
+  if (!file) {
+    alert("Bạn chưa thêm hình !");
+    setShowProcess(false);
+    return;
+  }
+
+  const storageRef = ref(storage, `imgUser/${file.name}`);
+  const uploadTask = uploadBytesResumable(storageRef, file);
+
+  uploadTask.on(
+    "state_changed",
+    (snapshot) => {
+      const progress = Math.round(
+        (snapshot.bytesTransferred / snapshot.totalBytes) * 100
+      );
+      setProgresspercent(progress);
+    },
+    (error) => {
+      alert(error);
+    },
+
+    () => {
+      getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
+        setShowProcess(false);
+          fetch(`${process.env.REACT_APP_API}/api/updateUser/` + userID , {
+            method: "PUT",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({urlImg: downloadURL}),
+          })
+            .then((res) => res.json())
+            .then((res) => {
+              if (res.status === 200) {
+                setUser({...user, urlImg: downloadURL})
+                alert(res.message);
+
+
+              } else {
+                alert(res.message);
+              }
+            });
+      });
+    }
+  );
+};
+
+//------
+  
   return (
-    <form className="wrapper-inforUser">
+    <form className="wrapper-inforUser" onSubmit={handlesubmit}>
       <div className="InforUser-title">
         <h1>Hồ sơ của tôi</h1>
         <p>Quản lí thông tin hồ sơ để bảo vệ tài khoản</p>
@@ -49,9 +108,19 @@ function InforUser() {
           <div className="avatar-box">
             <img src={user.urlImg || defaulyAvatar} className="avatar" />
           </div>
-          <input type="file" className="file-img" />
+          <input type="file" className="file-img" onChange={(e) => setFile(e.target.files[0])}/>
+          {showprocesss ? (
+            <p className="innerbar" style={{ width: `${progresspercent}%` }}>
+              {progresspercent}%
+            </p>
+          ) : (
+            <></>
+          )}
         </div>
+
+
       </div> : <></>}
+      <button type="submit" className="btn">Save</button>
     </form>
   );
 }
