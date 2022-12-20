@@ -27,7 +27,9 @@
         display: flex;
         margin: 22px 0;
         margin-left: 135px;
-        gap: 2px;
+        gap: 3px;
+        
+        
         
     }
     .book__nav--item {
@@ -73,7 +75,7 @@
         height: 44px;
         display: flex;
         align-items: center;
-        justify-content: center;
+        
     }
     .book__nav__direc--link {
         font-size: 26px;

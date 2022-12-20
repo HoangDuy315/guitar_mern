@@ -71,9 +71,9 @@
         background-color: white;
         width: 50px;
         height: 44px;
-        display: flex;
+        /* display: flex; */
         align-items: center;
-        justify-content: center;
+        /* justify-content: center; */
     }
     .book__nav__direc--link {
         font-size: 26px;
