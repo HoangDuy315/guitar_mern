@@ -1,8 +1,8 @@
 import "./InforUser.scss";
 import { useState, useEffect } from "react";
 import defaulyAvatar from "./user.svg";
+import storage from "../../more/fireBaseConfig/firebaseConfig";
 import { ref, getDownloadURL, uploadBytesResumable } from "firebase/storage";
-import storage from "../QLProduct/formAddProduct/firebaseConfig";
 
 function InforUser() {
   const [user, setUser] = useState();

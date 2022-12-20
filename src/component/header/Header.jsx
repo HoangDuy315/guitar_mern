@@ -34,7 +34,7 @@ function Header({ onLogOut }) {
             </li>
             <li className="heading__nav-item">
               {User ? <NavLink
-                to="/books"
+                to="/guitar"
                 onClick={this}
                 className="heading__nav-item--link"
               >
