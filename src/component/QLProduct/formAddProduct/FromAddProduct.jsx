@@ -13,6 +13,8 @@ let dataProduct = {
   color: "String",
   urlImg: "",
 };
+
+
 function FromAddProduct({ onhandleProduct }) {
   const [file, setFile] = useState();
   const [showprocesss, setShowProcess] = useState(false);
@@ -63,8 +65,8 @@ function FromAddProduct({ onhandleProduct }) {
           }
           console.log(dataProduct);
           if (dataProduct.urlImg) {
-            fetch(`${process.env.REACT_APP_API}/api/addproduct`, {
-              method: "POST",
+            fetch(`${process.env.REACT_APP_API}/api/addProduct`, {
+              method: "PUT",
               headers: {
                 "Content-Type": "application/json",
               },

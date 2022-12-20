@@ -7,7 +7,7 @@ function Footer() {
       <div id="footer">
         <div className="footer__container">
           <div className="footer__title">
-            <h1 className="footer__title-text">Group 6</h1>
+            <h1 className="footer__title-text">Group 16</h1>
           </div>
         <div className="footer__nav">
           <ul className="footer__nav-list">
