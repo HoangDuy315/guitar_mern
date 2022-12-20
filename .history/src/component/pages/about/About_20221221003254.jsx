@@ -38,7 +38,7 @@ function About() {
         </div>
         <div className="image-section">
           <img
-            src="https://th.bing.com/th/id/R.2ad5043af3a68c1945b6b9a74c260584?rik=iiiJtMkzahZLfg&pid=ImgRaw&r=0"
+            src="https://cdn.mos.cms.futurecdn.net/ap3ypKhMrnau7ymDNBR4yf-1200-80.jpg.webp"
             alt=""
           />
         </div>

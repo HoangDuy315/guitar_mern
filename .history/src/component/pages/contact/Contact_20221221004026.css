@@ -52,7 +52,7 @@
 
 .contact .contact-info .box {
   position: relative;
-  padding: 15px 110px;
+  padding: 20px 90px;
   display: flex;
 }
 
@@ -74,7 +74,6 @@
   color: black;
   font-weight: 300;
   flex-direction: column;
-  margin-top: -15px;
 }
 
 .contact-form {
