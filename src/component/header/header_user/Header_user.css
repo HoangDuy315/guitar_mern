@@ -64,7 +64,7 @@
     line-height: 28px;
     padding-left: 16px;
     color: #7446A1;
-    text-decoration: none;
+    text-decoration: none !important;
   }
   .user__list-item-name {
     font-size: 24px;

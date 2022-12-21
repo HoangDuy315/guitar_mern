@@ -1,9 +1,58 @@
-import { NavLink } from "react-router-dom";
 import "./Cart.scss";
+import { Link } from "react-router-dom";
+import { useState, useEffect } from "react";
 
 function Cart() {
+  const [user, setUser] = useState();
+  const [listItems, setListItems] = useState([])
+  const [subtotal, setSubtotal] = useState(0)
+  const [total, setTotal] = useState(0)
+  const [shipping, setShipping] = useState(15000)
+  const userID = localStorage.getItem("userId");
+
+  useEffect(() => {
+    fetch(`${process.env.REACT_APP_API}/api/getoneuser/` + userID)
+      .then((res) => res.json())
+      .then((res) => {
+        setUser(res);
+        setListItems(res.Cart.map((item) => {return {...item, quantity: 1}}))
+        setSubtotal(listItems.reduce((init, current) =>  init + current.price * current.quantity,0 ))
+        setTotal(subtotal + shipping)
+      });
+  }, []);
+
+  const onChangeTotal = () => {
+    const sum = listItems.reduce((init, current) =>  init + current.price * current.quantity,0 )
+    setSubtotal(sum)
+    setTotal(sum + shipping)
+  }
+
+  const handleDeleteProduct = (indexItem) => {
+    const newListCart = listItems.filter((item, index)=> index !== indexItem)
+    
+    fetch(`${process.env.REACT_APP_API}/api/updateUser/` + userID, {
+      method: "PUT",
+      body: JSON.stringify({Cart: newListCart}),
+      headers: {
+      "Content-type": "application/json; charset=UTF-8",
+    },
+    })
+    .then(res => res.json())
+    .then(res => {
+      if(res.status === 200)
+      {
+        alert("Xoa Thanh Cong !");
+        window.location.reload();
+        setListItems(newListCart)
+      }
+      else alert(`${res.message}`);
+
+    })
+    console.log(newListCart)
+  }
+
   return (
-    <div class="container">
+    <div class="cart-container">
       <div class="row">
         <div class="col-sm-12 col-md-10 col-md-offset-1">
           <table class="table table-hover">
@@ -20,40 +69,58 @@ function Cart() {
               <tr>
                 <td class="col-sm-8 col-md-6" />
               </tr>
-              <tr>
-                <td class="col-md-6">
-                  <div class="media">
-                    {/* <a class="thumbnail pull-left" href="#"> <img class="media-object" src="http://icons.iconarchive.com/icons/custom-icon-design/flatastic-2/72/product-icon.png" style="width: 72px; height: 72px;"> </a> */}
-                    <div class="media-body">
-                      <h4 class="media-heading">
-                        <a href="#">Product name</a>
-                      </h4>
-                      <h5 class="media-heading">
-                        {" "}
-                        by <a href="#">Brand name</a>
-                      </h5>
-                      <span>Status: </span>
-                      <span class="text-warning">
-                        <strong>Leaves warehouse in 2 - 3 weeks</strong>
-                      </span>
-                    </div>
-                  </div>
-                </td>
-                <td class="col-md-1" style={{ textAlign: "center" }}>
-                  {/* <input type="email" class="form-control" id="exampleInputEmail1" value="2"> */}
-                </td>
-                <td class="col-md-1 text-center">
-                  <strong>$4.99</strong>
-                </td>
-                <td class="col-md-1 text-center">
-                  <strong>$9.98</strong>
-                </td>
-                <td class="col-md-1">
-                  <button type="button" class="btn btn-danger">
-                    <span class="glyphicon glyphicon-remove"></span> Remove
-                  </button>
-                </td>
-              </tr>
+
+              {listItems ?
+               listItems.map((item, index) => (
+                  <tr key={index}>
+                    <td class="col-md-6">
+                      <div class="media">
+                        <div class="media-body">
+                          <h4 class="media-heading">
+                            <p href="#">{item.name}</p>
+                          </h4>
+                          <h5 class="media-heading">
+                            {" "}
+                            <p href="#">{item.type}</p>
+                          </h5>
+                          <span>Color: </span>
+                          <span class="text-warning">
+                            <strong>{item.color}</strong>
+                          </span>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="col-md-1" style={{ textAlign: "center" }}>
+                      <input
+                        type="number"
+                        class="form-control"
+                        id="exampleInputEmail1"
+                        value={item.quantity}
+                        onChange= {(e) => {
+                          if(e.target.value >= 0)
+                          {
+                          const newQuantites = [...listItems]
+                          newQuantites[index].quantity = e.target.value
+                          setListItems(newQuantites)
+                          onChangeTotal()
+                        }
+
+                        }}
+                      />
+                    </td>
+                    <td class="col-md-1 text-center">
+                      <strong>{item.price} vnd</strong>
+                    </td>
+                    <td class="col-md-1 text-center">
+                      <strong>{item.price * item.quantity} vnd</strong>
+                    </td>
+                    <td class="col-md-1">
+                      <button type="button" class="btn btn-danger" onClick={() => handleDeleteProduct(index)}>
+                        <span class="glyphicon glyphicon-remove"></span> Remove
+                      </button>
+                    </td>
+                  </tr>
+                )) : <></>}
               <tr>
                 <td>   </td>
                 <td>   </td>
@@ -63,7 +130,7 @@ function Cart() {
                 </td>
                 <td class="text-right">
                   <h5>
-                    <strong>$24.59</strong>
+                    <strong>{subtotal} vnd</strong>
                   </h5>
                 </td>
               </tr>
@@ -76,7 +143,7 @@ function Cart() {
                 </td>
                 <td class="text-right">
                   <h5>
-                    <strong>$6.94</strong>
+                    <strong>{shipping} vnd</strong>
                   </h5>
                 </td>
               </tr>
@@ -89,7 +156,7 @@ function Cart() {
                 </td>
                 <td class="text-right">
                   <h3>
-                    <strong>$31.53</strong>
+                    <strong>{total} vnd</strong>
                   </h3>
                 </td>
               </tr>
@@ -98,17 +165,17 @@ function Cart() {
                 <td>   </td>
                 <td>   </td>
                 <td>
-                  <button type="button" class="btn btn-default">
+                  <Link type="button" class="btn btn-default" to="/guitar">
                     <span class="glyphicon glyphicon-shopping-cart"></span>{" "}
                     Continue Shopping
-                  </button>
+                  </Link>
                 </td>
                 <td>
-                  <NavLink to="/checkout">
+                  <Link to="/checkout">
                     <button type="button" class="btn btn-success">
                       Checkout <span class="glyphicon glyphicon-play"></span>
                     </button>
-                  </NavLink>
+                  </Link>
                 </td>
               </tr>
             </tbody>

@@ -66,7 +66,7 @@ function FromAddProduct({ onhandleProduct }) {
           console.log(dataProduct);
           if (dataProduct.urlImg) {
             fetch(`${process.env.REACT_APP_API}/api/addProduct`, {
-              method: "PUT",
+              method: "POST",
               headers: {
                 "Content-Type": "application/json",
               },
