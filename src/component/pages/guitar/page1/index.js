@@ -5,15 +5,14 @@ import {Link, useLocation} from 'react-router-dom'
 
 function Page1({ page }) {
   let url = useLocation()
-  const [guitars, setBooks] = useState([]);
+  const [guitars, setGuitar] = useState([]);
   const [User, setUser] = useState()
   const getUser = localStorage.getItem('userId')
-
   useEffect(() => {
     fetch(`${process.env.REACT_APP_API}/api/getallproduct`)
     .then((res) => res.json())
     .then((res) =>{
-        setBooks(res.reverse())
+        setGuitar(res.reverse())
     })
 
 
@@ -28,24 +27,24 @@ function Page1({ page }) {
 
   }, [])
 
-  const handleGetProductID = (ID) => {
-      console.log(ID);
-    let DaataFake = User;
+  const handleGetProductID = (data) => {
+      let listCart = [];
       if(User.Cart && User.Cart.length > 0) {
         console.log("haven Cart");
-        setUser({})
-        DaataFake.Cart = [...DaataFake.Cart, ID]
+        listCart = [...User.Cart, data]
+        console.log(data);
       }
       else {
         console.log("haven't Cart");
-        DaataFake.Cart = [ID]
+        listCart = [data]
+        console.log(listCart);
       }
    
 
-      fetch(`${process.env.REACT_APP_API}/api/updatesser/` + getUser, {
-        method: "PATCH",
-        body: JSON.stringify(DaataFake),
-      headers: {
+      fetch(`${process.env.REACT_APP_API}/api/updateUser/` + getUser, {
+        method: "PUT",
+        body: JSON.stringify({Cart: listCart}),
+        headers: {
         "Content-type": "application/json; charset=UTF-8",
       },
       })
@@ -61,11 +60,11 @@ function Page1({ page }) {
 
       })
 
-    const idProduct = localStorage.getItem('productId')
-    if(idProduct) {
-      localStorage.removeItem('productId')
-    }
-    localStorage.setItem('productId', ID)
+    // const idProduct = localStorage.getItem('productId')
+    // if(idProduct) {
+    //   localStorage.removeItem('productId')
+    // }
+    // localStorage.setItem('productId', ID)
   }
   return (
     <>
@@ -100,7 +99,7 @@ function Page1({ page }) {
                   </p> */}
                 </div>
                 <div className="action-box">
-                 <button onClick={() => handleGetProductID(guitar._id)}> <Link className="product-btn-buy active">Add to Cart</Link></button>
+                 <button onClick={() => handleGetProductID(guitar)}> <Link className="product-btn-buy active">Add to Cart</Link></button>
                  <button> <Link className="product-btn-buy" to={`${url}/detailbook`}>Buy</Link></button>
                 </div >
               </li>
