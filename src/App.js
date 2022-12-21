@@ -2,7 +2,7 @@ import React, { Fragment, useEffect, useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./App.css";
 
-import { publichRoutes, privateRoutes } from "./routes";
+import { publichRoutes, privateRoutes } from "./routes/routes";
 import {DefaultLayout} from "./Layout";
 
 
