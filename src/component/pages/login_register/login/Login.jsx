@@ -47,7 +47,6 @@ function Login({ onLogin }) {
         if (data.status === 200) {
           
           localStorage.setItem('userId', data.id)
-
           onLogin(data.id);
           // alert("SuccessLogin");
           setIsLoading(false)
@@ -72,6 +71,7 @@ function Login({ onLogin }) {
                 <span className="login-input-span"></span>
                 <input
                   type="text"
+                  value={inputName}
                   required
                   className="login-input-box"
                   placeholder="Username"
@@ -82,6 +82,7 @@ function Login({ onLogin }) {
                 <span className="login-input-span"></span>
                 <input
                   type="password"
+                  value={inputPassword}
                   required
                   className="login-input-box"
                   placeholder="Password"

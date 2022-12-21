@@ -59,7 +59,6 @@ function Signup() {
         {
           alert("Success")
           setIsLoading(false)
-          
           navigate("/login", { replace: true });
   
         }

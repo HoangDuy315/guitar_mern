@@ -1,13 +1,32 @@
 import React from "react";
 import "./Checkout.css";
 import checkout from "../checkout/card_img.png";
+import { useState, useEffect } from "react";
+const Checkout = ({data}) => {
+  const userID = localStorage.getItem("userId");
+  const [user, setUser] = useState();
+  useEffect(() => {
 
-const Checkout = () => {
+    fetch(`${process.env.REACT_APP_API}/api/getoneuser/`+ userID, {
+      method: "GET"
+    })
+    .then(res => res.json())
+    .then(res => {
+      setUser(res)
+    })
+
+
+  },[])
+
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+  }
   return (
     <div className="checkout">
       <div className="container">
         <h2 className="header">CHECKOUT</h2>
-        <form action="">
+        <form onSubmit={handleSubmit}>
           <div className="row">
             <div className="col">
               <h3 className="title">billing</h3>

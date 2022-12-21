@@ -32,10 +32,21 @@ const privateRoutes = [
   { path: "/blog", component: Blog },
   { path: "/checkout", component: Checkout },
   { path: "/contact", component: Contact },
-  { path: "/qluser", component: QLUser },
-  { path: "/qlproduct", component: QLProduct },
   { path: "/inforuser", component: InforUser },
   { path: "/cart", component: Cart },
 ];
-
-export { publichRoutes, privateRoutes };
+const adminRouter = [
+  { path: "/", component: Home },
+  { path: "/header", component: Header },
+  { path: "/footer", component: Footer },
+  { path: "/about", component: About },
+  { path: "/guitar", component: Guitar },
+  { path: "/blog", component: Blog },
+  { path: "/checkout", component: Checkout },
+  { path: "/contact", component: Contact },
+  { path: "/inforuser", component: InforUser },
+  { path: "/cart", component: Cart },
+  { path: "/qluser", component: QLUser },
+  { path: "/qlproduct", component: QLProduct },
+]
+export { publichRoutes, privateRoutes, adminRouter };

@@ -33,7 +33,7 @@ function Home() {
                         "Lorem ipsum dolor sit amet consectetur adipisicing elit. At facere odit reiciendis, vitae, iste ab temporibus eligendi sunt maiores possimus distinctio architecto quisquam natus dolore quam obcaecati pariatur? Ullam, earum?"}{" "}
                     </p>
                     <div className="Home__Header-book__info--action">
-                      <NavLink className="Home__Header-book__info--btn-buy" to={`${url}/detailbook`} BookId={book.id}>
+                      <NavLink className="Home__Header-book__info--btn-buy" to='/'>
                         Buy Now
                       </NavLink>
                       <button className="Home__Header-book__info--btn-read">

@@ -11,5 +11,4 @@ export { default as Loading } from "./more/loading/Loading";
 export { default as QLUser } from "./user/QLUser/QLUser";
 export { default as QLProduct } from "./product/QLProduct/QLProduct";
 export { default as InforUser } from "./user/InforUser/InforUser";
-export { default as DetailBook } from "./product/detailBook/DetailBook";
 export { default as Terms } from "./pages/login_register/TermsService/Terms";

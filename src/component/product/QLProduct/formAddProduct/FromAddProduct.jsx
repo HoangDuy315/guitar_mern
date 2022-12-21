@@ -21,8 +21,8 @@ function FromAddProduct({ onhandleProduct }) {
   const [progresspercent, setProgresspercent] = useState(0);
 
   const [name, setName] = useState("");
-  const [quantity, setQuantity] = useState("");
-  const [price, setPrice] = useState("");
+  const [quantity, setQuantity] = useState(0);
+  const [price, setPrice] = useState(0);
   const [type, setType] = useState("");
   const [color, setColor] = useState("");
 
