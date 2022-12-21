@@ -10,5 +10,6 @@
 .Header_btn_login:hover {
     opacity: 1;
     background-color:  rgb(95,79,204);
+    text-decoration: none;
     color: white;
 }

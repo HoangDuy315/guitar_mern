@@ -1,4 +1,4 @@
-import { Header, Footer } from "../../component";
+import { Header, Footer } from "../../component/index";
 import "./DefaultLayout.css";
 // import Books from '../books';
 function DefaultLayout({ children, onHandleLogout }) {

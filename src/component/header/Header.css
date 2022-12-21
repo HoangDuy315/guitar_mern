@@ -46,9 +46,11 @@
 }
 .heading__nav-item--p {
   opacity: .5;
+  text-decoration: none;
 }
 .heading__nav-item--link:hover {
   border-bottom: 4px solid #ccc;
+  text-decoration: none;
   opacity: 1;
   color: black;
 }

@@ -13,27 +13,23 @@ function Header_user({onLogoutHeader, onLogOut2}) {
   console.log("heelo " +UserStore)
 
 
-  fetch(`${process.env.REACT_APP_API}/api/getOneUser`,{
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({ _id: UserStore}),
+  fetch(`${process.env.REACT_APP_API}/api/getoneuser/`+ UserStore, {
+    method: "GET"
   })
   .then(res => res.json())
   .then(res => {
     setUser(res)
-
+    console.log(res);
   })
   },[])
-  console.log(user.numberCart)
+  console.log(user.Cart)
   return (
     <>
       {" "}
       <div className="Header_user-icon">
          <div className="Header_user-icon__cart">
           <NavLink to='/cart' onClick={this}><i className="fa fa-shopping-cart"></i></NavLink>
-          {user.numberCart > 0 ? <span className="shopping-cart__number">{user.numberCart.length}</span>: <></>}
+          {user.Cart && user.Cart.length > 0 ? <span className="shopping-cart__number">{user.Cart.length}</span>: <></>}
           
           </div>
           
