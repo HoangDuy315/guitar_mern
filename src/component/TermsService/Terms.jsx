@@ -85,7 +85,7 @@ function Terms() {
         with The Guitarshop’s express written permission. 7-2 The images,
         drawings and models, etc. referred to in the first paragraph remain The
         Guitarshop’s inalienable property and must be returned and removed at
-        its first request.
+        its first request..
         </p>
         <p>
            * Article 8. Delivery times 8-1 The agreed delivery
