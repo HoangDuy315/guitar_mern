@@ -63,7 +63,7 @@ function Terms() {
         are given in good faith. The client is obliged to ensure that printed
         matter, drawings, images, etc. are neither copied nor made available to
         third parties or that the contents thereof are communicated to third
-        parties. 
+        parties...
         </p>
         <p>
           * Article 6: General terms and conditions of contract partners
