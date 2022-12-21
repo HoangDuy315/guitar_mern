@@ -134,7 +134,7 @@ function Terms() {
         third parties as a result of the cancellation of the order and/or
         refusal of the goods. 12-2 Without prejudice to the provisions of the
         previous paragraph of this article, The Guitarshop reserves all rights
-        to claim full compliance with the agreement and/or full compensation.
+        to claim full compliance with the agreement and/or full compensation..
         </p>
         <p>
          * Article 13. Shipment The shipment takes place in the manner as indicated
