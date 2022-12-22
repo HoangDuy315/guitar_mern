@@ -7,8 +7,9 @@ function Cart() {
   const [listItems, setListItems] = useState([])
   const [subtotal, setSubtotal] = useState(0)
   const [total, setTotal] = useState(0)
-  const [shipping, setShipping] = useState(15000)
+  const [shipping, setShipping] = useState(5.05)
   const userID = localStorage.getItem("userId");
+
 
   useEffect(() => {
     fetch(`${process.env.REACT_APP_API}/api/getoneuser/` + userID)
@@ -20,6 +21,12 @@ function Cart() {
         setTotal(subtotal + shipping)
       });
   }, []);
+  useEffect(()=> {
+    setSubtotal(listItems.reduce((init, current) =>  init + current[0].price * current[1],0 ))
+    setTotal(subtotal + shipping)
+
+
+  }, [listItems])
 
   const onChangeTotal = () => {
     const sum = listItems.reduce((init, current) =>  init + current[0].price * current[1],0 )
@@ -111,10 +118,10 @@ function Cart() {
                       />
                     </td>
                     <td class="col-md-1 text-center">
-                      <strong>{item[0].price} vnd</strong>
+                      <strong>$ {item[0].price}</strong>
                     </td>
                     <td class="col-md-1 text-center">
-                      <strong>{item[0].price * item[1]} vnd</strong>
+                      <strong>$ {item[0].price * item[1]}</strong>
                     </td>
                     <td class="col-md-1">
                       <button type="button" class="btn btn-danger" onClick={() => handleDeleteProduct(index)}>
@@ -133,7 +140,7 @@ function Cart() {
                 </td>
                 <td class="text-right">
                   <h5>
-                    <strong>{subtotal} vnd</strong>
+                    <strong>$ {subtotal} </strong>
                   </h5>
                 </td>
               </tr>
@@ -146,7 +153,7 @@ function Cart() {
                 </td>
                 <td class="text-right">
                   <h5>
-                    <strong>{shipping} vnd</strong>
+                    <strong>$ {shipping}</strong>
                   </h5>
                 </td>
               </tr>
@@ -159,7 +166,7 @@ function Cart() {
                 </td>
                 <td class="text-right">
                   <h3>
-                    <strong>{total} vnd</strong>
+                    <strong>$ {total}</strong>
                   </h3>
                 </td>
               </tr>
