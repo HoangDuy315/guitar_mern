@@ -40,7 +40,6 @@ function Header_user({onLogoutHeader, onLogOut2}) {
               <li ><NavLink className="user__list-item" to="/inforuser">Thong Tin</NavLink></li>
               {user.role === "Admin" ? <li ><NavLink className="user__list-item" to="/qluser" onClick={this}>Quan ly User</NavLink></li> : <></>}
               {user.role === "Admin" ? <li ><NavLink className="user__list-item" to="/qlproduct" onClick={this}>Quan ly Product</NavLink></li> : <></>}
-              <li ><NavLink className="user__list-item" to="/doimatkhau">Doi mat khau</NavLink></li>
               <li ><NavLink className="user__list-item" onClick={() => {onLogOut2(); onLogoutHeader()}} to="/">Dang Xuat</NavLink></li>
             </ul>
           </i>
