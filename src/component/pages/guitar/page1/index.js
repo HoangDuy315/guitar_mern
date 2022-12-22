@@ -86,11 +86,11 @@ function Page1({ page }) {
                 <div className="product-info">
                   <p className="product-name">{guitar.name}</p>
                   <p className="product-author">
-                    Tác giả:{" "}
-                    <strong>{guitar.author || "Đang cập nhật ..."}</strong>
+                    Type:{" "}
+                    <strong>{guitar.type || "Đang cập nhật ..."}</strong>
                   </p>
                   <p className="product-price">
-                    Giá: <strong>{guitar.price}đ</strong>
+                    Giá: <strong>$ {guitar.price}</strong>
                   </p>
                   {/* <p className="product-available">
                     {guitar.availableNumber
