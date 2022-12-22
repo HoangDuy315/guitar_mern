@@ -143,15 +143,14 @@ function Signup() {
                     onChange={(e) => setConfirmPassword(e.target.value)}
                   ></input>
                 </div>
-                <div>
-                  <input required type="checkbox" className="checkbox" />
+                <div className="terms">
+                  <input required type="checkbox" className="input-checkbox" />
                   <span className="btn-checkbox">
                     I argee all statement in{""}
                     <NavLink
                       className="NavLink__to-term"
                       to="/terms"
-                      onClick={this}>
-                      <strong> Terms of service</strong>
+                      onClick={this}><strong> Terms of service</strong>
                     </NavLink>
 
                   </span>

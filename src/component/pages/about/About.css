@@ -1,7 +1,7 @@
 .about {
   width: 100%;
   min-height: 100vh;
-  background-color: #ddd;
+  background-color: #F0F5F8;
 }
 
 .container {
@@ -132,3 +132,45 @@
     text-align: center;
   }
 }
+.container1 {
+  background-color: #F0F5F8;
+  width: 100%;
+}
+.title1 {
+    text-align: center;
+    padding-top: 32px;
+}
+  .list-group {
+      width: 100%;
+      margin: 0;
+      padding: 50px 0;
+        list-style: none;
+        display: flex;
+        justify-content:  space-around;
+}          
+
+        .item {
+          width: 250px;
+        margin: 0;
+        padding: 0;
+      }
+        .avatar {
+          width: 250px;
+          border-radius: 50%;
+        }
+        .name {
+          text-align: center;
+          font-size: 26px;
+        }
+        .role {
+          font-size: 20px;
+          text-align: center;
+          font-weight: 600;
+        }
+        .desc {
+          font-size: 20px;
+          text-align: center;
+          font-weight: 600;
+        }
+      
+    
