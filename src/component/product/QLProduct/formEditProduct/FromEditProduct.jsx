@@ -1,7 +1,8 @@
 import React from "react";
-import "./FromAddProduct.scss";
+import "./FromEditProduct.scss";
 
 import { useNavigate } from "react-router-dom";
+
 import { useState } from "react";
 import storage from "./firebaseConfig";
 import { ref, getDownloadURL, uploadBytesResumable } from "firebase/storage";
@@ -16,16 +17,12 @@ let dataProduct = {
 };
 
 
-function FromAddProduct({ onhandleProduct }) {
+function FromAddProduct({ onhandleProduct, data }) {
   const [file, setFile] = useState();
   const [showprocesss, setShowProcess] = useState(false);
   const [progresspercent, setProgresspercent] = useState(0);
 
-  const [name, setName] = useState("");
-  const [quantity, setQuantity] = useState(0);
-  const [price, setPrice] = useState(0);
-  const [type, setType] = useState("");
-  const [color, setColor] = useState("");
+  const [product, setProduct] = useState(data);
 
   const navigate = useNavigate();
 
@@ -57,24 +54,15 @@ function FromAddProduct({ onhandleProduct }) {
       () => {
         getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
           setShowProcess(false);
-
-
-          dataProduct = {
-            name: name,
-            quantity: quantity,
-            price: price,
-            type: type,
-            color: color,
-            urlImg: downloadURL,
-          }
-          console.log(dataProduct);
-          if (dataProduct.urlImg) {
-            fetch(`${process.env.REACT_APP_API}/api/addProduct`, {
-              method: "POST",
+          setProduct({...product, urlImg: downloadURL});
+          console.log(product);
+          if (product.urlImg) {
+            fetch(`${process.env.REACT_APP_API}/api/updateProduct/` + product._id, {
+              method: "PUT",
               headers: {
                 "Content-Type": "application/json",
               },
-              body: JSON.stringify(dataProduct),
+              body: JSON.stringify(product),
             })
               .then((res) => res.json())
               .then((res) => {
@@ -96,46 +84,46 @@ function FromAddProduct({ onhandleProduct }) {
   return (
     <form onSubmit={handlesubmit}>
       <fieldset className="product-container">
-        <legend className="input-title">Add A New Product</legend>
+        <legend className="input-title">Edit A Product</legend>
 
         <div className="input-product">
           <label>Name:</label>
           <input
             type="text"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
+            value={product.name}
+            onChange={(e) => setProduct({...product, name: e.target.value})}
           />
         </div>
         <div className="input-product">
           <label>Quantity:</label>
           <input
             type="number"
-            value={quantity}
-            onChange={(e) => setQuantity(e.target.value)}
+            value={product.quantity}
+            onChange={(e) => setProduct({...product, quantity: e.target.value})}
           />
         </div>
         <div className="input-product">
           <label>Price:</label>
           <input
             type="number"
-            value={price}
-            onChange={(e) => setPrice(e.target.value)}
+            value={product.price}
+            onChange={(e) => setProduct({...product, price: e.target.value})}
           />
         </div>
         <div className="input-product">
           <label>Type:</label>
           <input
             type="text"
-            value={type}
-            onChange={(e) => setType(e.target.value)}
+            value={product.type}
+            onChange={(e) => setProduct({...product, type: e.target.value})}
           />
         </div>
         <div className="input-product">
           <label>Color:</label>
           <input
             type="text"
-            value={color}
-            onChange={(e) => setColor(e.target.value)}
+            value={product.color}
+            onChange={(e) => setProduct({...product, color: e.target.value})}
           />
         </div>
         <div className="input-product direc-row">
@@ -149,7 +137,7 @@ function FromAddProduct({ onhandleProduct }) {
           )}
         </div>
         <div className="btn-button">
-          <button className="btn-button-add__product add">Add product</button>
+          <button className="btn-button-add__product add">Update product</button>
           <button className="btn-button-add__product" onClick={onhandleProduct}>
             Cancel
           </button>

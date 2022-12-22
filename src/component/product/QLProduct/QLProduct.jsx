@@ -1,14 +1,28 @@
 import "./QLProduct.scss";
 import FormAddProduct from "./formAddProduct/FromAddProduct";
+import FormEditProduct from ".//formEditProduct/FromEditProduct";
 import { useState, useEffect } from "react";
 function QLProduct() {
   const [addProduct, setAddProduct] = useState(false);
+  const [editProduct, setEditProduct] = useState(false);
+  const [product, setProduct] = useState({});
+  
+  const [listsProduct, setListsProduct] = useState([]);
+  const [numberShow, setNumberShow] = useState(10);
+
+
   const handleChangeAddProduct = () => {
     setAddProduct(!addProduct);
   };
+  const handleChangeEditProduct = () => {
+    setEditProduct(!editProduct);
+  };
 
-  const [listsProduct, setListsProduct] = useState([]);
-  const [numberShow, setNumberShow] = useState(10);
+  const handdleGetproductToEdit = (index) => {
+    setEditProduct(!editProduct);
+    setProduct(listsProduct[index])
+  }
+
 
   useEffect(() => {
     fetch(`${process.env.REACT_APP_API}/api/getallproduct`)
@@ -47,7 +61,15 @@ function QLProduct() {
         {addProduct ? (
           <FormAddProduct onhandleProduct={handleChangeAddProduct}/>
         ) : (
-          <>
+          <></>
+        )}
+        {editProduct ? (
+          <FormEditProduct onhandleProduct={handleChangeEditProduct} data={product}/>
+        ) : (
+          <></>
+        )}
+
+        { addProduct || editProduct ? <></> : <>
             <ul className="header-table">
               <li className="stt">STT</li>
               <li className="name">Tên sản phẩm</li>
@@ -68,7 +90,7 @@ function QLProduct() {
                       <p className="sale">{product.sale}</p>
                       <p className="quantity">{product.quantity}</p>
                       <div className="action">
-                        <button className="edit btn">Sửa</button>
+                        <button className="edit btn" onClick={() => handdleGetproductToEdit(index)}>Sửa</button>
                         <button className="delete btn" onClick={() => handleDelete(product._id)}>Xóa</button>
                       </div>
                     </li>
@@ -77,8 +99,7 @@ function QLProduct() {
               }) 
               }
             </ul>
-          </>
-        )}
+          </>}
       </div>
     </div>
   );

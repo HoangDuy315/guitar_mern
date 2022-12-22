@@ -7,22 +7,29 @@ function Cart() {
   const [listItems, setListItems] = useState([])
   const [subtotal, setSubtotal] = useState(0)
   const [total, setTotal] = useState(0)
-  const [shipping, setShipping] = useState(15000)
+  const [shipping, setShipping] = useState(5.05)
   const userID = localStorage.getItem("userId");
+
 
   useEffect(() => {
     fetch(`${process.env.REACT_APP_API}/api/getoneuser/` + userID)
       .then((res) => res.json())
       .then((res) => {
         setUser(res);
-        setListItems(res.Cart.map((item) => {return {...item, quantity: 1}}))
-        setSubtotal(listItems.reduce((init, current) =>  init + current.price * current.quantity,0 ))
+        setListItems(res.Cart)
+        setSubtotal(listItems.reduce((init, current) =>  init + current[0].price * current[1],0 ))
         setTotal(subtotal + shipping)
       });
   }, []);
+  useEffect(()=> {
+    setSubtotal(listItems.reduce((init, current) =>  init + current[0].price * current[1],0 ))
+    setTotal(subtotal + shipping)
+
+
+  }, [listItems])
 
   const onChangeTotal = () => {
-    const sum = listItems.reduce((init, current) =>  init + current.price * current.quantity,0 )
+    const sum = listItems.reduce((init, current) =>  init + current[0].price * current[1],0 )
     setSubtotal(sum)
     setTotal(sum + shipping)
   }
@@ -71,21 +78,21 @@ function Cart() {
               </tr>
 
               {listItems ?
-               listItems.map((item, index) => (
+                 listItems.map((item, index) => (
                   <tr key={index}>
                     <td class="col-md-6">
                       <div class="media">
                         <div class="media-body">
                           <h4 class="media-heading">
-                            <p href="#">{item.name}</p>
+                            <p href="#">{item[0].name}</p>
                           </h4>
                           <h5 class="media-heading">
                             {" "}
-                            <p href="#">{item.type}</p>
+                            <p href="#">{item[0].type}</p>
                           </h5>
                           <span>Color: </span>
                           <span class="text-warning">
-                            <strong>{item.color}</strong>
+                            <strong>{item[0].color}</strong>
                           </span>
                         </div>
                       </div>
@@ -95,13 +102,15 @@ function Cart() {
                         type="number"
                         class="form-control"
                         id="exampleInputEmail1"
-                        value={item.quantity}
+                        value={item[1]}
                         onChange= {(e) => {
                           if(e.target.value >= 0)
                           {
                           const newQuantites = [...listItems]
-                          newQuantites[index].quantity = e.target.value
+                          newQuantites[index][1] = e.target.value
                           setListItems(newQuantites)
+
+                          
                           onChangeTotal()
                         }
 
@@ -109,10 +118,10 @@ function Cart() {
                       />
                     </td>
                     <td class="col-md-1 text-center">
-                      <strong>{item.price} vnd</strong>
+                      <strong>$ {item[0].price}</strong>
                     </td>
                     <td class="col-md-1 text-center">
-                      <strong>{item.price * item.quantity} vnd</strong>
+                      <strong>$ {item[0].price * item[1]}</strong>
                     </td>
                     <td class="col-md-1">
                       <button type="button" class="btn btn-danger" onClick={() => handleDeleteProduct(index)}>
@@ -120,7 +129,8 @@ function Cart() {
                       </button>
                     </td>
                   </tr>
-                )) : <></>}
+                )
+                ) : <></>}
               <tr>
                 <td>   </td>
                 <td>   </td>
@@ -130,7 +140,7 @@ function Cart() {
                 </td>
                 <td class="text-right">
                   <h5>
-                    <strong>{subtotal} vnd</strong>
+                    <strong>$ {subtotal} </strong>
                   </h5>
                 </td>
               </tr>
@@ -143,7 +153,7 @@ function Cart() {
                 </td>
                 <td class="text-right">
                   <h5>
-                    <strong>{shipping} vnd</strong>
+                    <strong>$ {shipping}</strong>
                   </h5>
                 </td>
               </tr>
@@ -156,7 +166,7 @@ function Cart() {
                 </td>
                 <td class="text-right">
                   <h3>
-                    <strong>{total} vnd</strong>
+                    <strong>$ {total}</strong>
                   </h3>
                 </td>
               </tr>
