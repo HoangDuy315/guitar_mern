@@ -58,17 +58,17 @@ function Header({ onLogOut }) {
                 <p className="heading__nav-item--p">About</p>
               )}
             </li>
-            {/* <li className="heading__nav-item">
+            <li className="heading__nav-item">
               
             {User ? <NavLink
                 to="/blog"
                 onClick={this}
                 className="heading__nav-item--link"
               >
-                Blog
-              </NavLink> : <p className="heading__nav-item--p">Blog</p>}
+                Staff
+              </NavLink> : <p className="heading__nav-item--p">Staff</p>}
 
-            </li> */}
+            </li>
             <li className="heading__nav-item">
               {User ? (
                 <NavLink
