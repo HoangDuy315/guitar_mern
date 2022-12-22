@@ -4,36 +4,6 @@ import { BsFacebook, BsTwitter, BsInstagram, BsGithub } from "react-icons/bs";
 function About() {
   return (
     <div className="about">
-        <div className="container1">
-            <h1 className="title1">Thông Tin Thành Viên</h1>
-            <ul className="list-group">
-                <li className="item">
-                    <img className="avatar" src="https://upload-img-theta.vercel.app/hinhnen.jpg" alt="Avatar"/>
-                    <h2 className="name">Bùi Đức Mạnh</h2>
-                    <p className="desc">19521822</p>
-                    <p className="role">Thành viên</p>
-                </li>
-                <li className="item">
-                    <img className="avatar" src="https://upload-img-theta.vercel.app/hinhnen.jpg" alt="Avatar"/>
-                    <h2 className="name">Lường Tiến Thuận Hải</h2>
-                    <p className="desc">19521462</p>
-                    <p className="role">Thành viên</p>
-                </li>
-                <li className="item">
-                    <img className="avatar" src="https://upload-img-theta.vercel.app/hinhnen.jpg" alt="Avatar"/>
-                    <h2 className="name">Nguyễn Hoàng Duy</h2>
-                    <p className="desc">19521425</p>
-                    <p className="role">Nhóm trưởng</p>
-                </li>
-                <li className="item">
-                    <img className="avatar" src="https://upload-img-theta.vercel.app/hinhnen.jpg" alt="Avatar"/>
-                    <h2 className="name">Nguyễn Hoàng Long</h2>
-                    <p className="desc">19521787</p>
-                    <p className="role">Thành viên</p>
-                </li>
-
-              </ul>
-        </div>
       <div className="container">
         <div className="content-section">
           <div className="title">
