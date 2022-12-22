@@ -3,13 +3,13 @@
   width: 100%;
 }
 .title1 {
-    text-align: center;
-    padding-top: 32px;
+     text-align: center;
+     padding-top: 32px;
 }
   .list-group {
-      width: 100%;
-      margin: 0;
-      padding: 50px 0;
+       width: 100%;
+       margin: 0;
+       padding: 50px 0;
         list-style: none;
         display: flex;
         justify-content:  space-around;
@@ -21,13 +21,13 @@
         padding: 10px 10px;
         background: url(https://toigingiuvedep.vn/wp-content/uploads/2021/08/kham-pha-nhung-background-black-background-den-huyen-bi-va-dep-nhat.jpg);
         background-size: cover;
-        border-radius: 4%;
+        border-radius: 5%;
       }
         .about-avatar {
           width: 280px;
           border-radius: 50%;
           margin: 13% 13%;
-          border: 1.5px solid rgb(255, 255, 255);
+          border: 1.55px solid rgb(255, 255, 255);
           transition: all 1s ease;
           
         }
@@ -51,4 +51,18 @@
           text-align: center;
           font-weight: 600;
         }
-      
+        .about-role-leader {
+          font-size: 20px;
+          text-align: center;
+          font-weight: 600;
+          color: red;
+        }
+        .about-avatar-leader{
+          width: 280px;
+          height: 280px;
+          border-radius: 50%;
+          margin: 13% 13%;
+          border: 1.55px solid rgb(255, 255, 255);
+          transition: all 1s ease;
+         
+        }
