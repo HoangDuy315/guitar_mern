@@ -2,8 +2,7 @@
 
 .login-loading{
     position: relative;
-    top: -120px;
-    left: 190px;
+    left: calc(50% - 50px);
 }
 .login {
     display: flex;

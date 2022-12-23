@@ -1,15 +1,17 @@
 
+
+
 .loading--1 {
     position: absolute;
     /* border-top: 10px solid transparent; */
     border-radius: 50%;
-    border-top: 10px solid #ccc;
-    border-right: 10px solid transparent;
-    border-bottom: 10px solid #ccc;
-    border-left: 10px solid #ccc;
-    animation: spin1 3.5s linear infinite;
-    width: 100px;    
-    height: 100px;
+    border-top: 8px solid rgb(117, 221, 204);
+    border-right:  8px solid transparent;
+    border-bottom:  8px solid  rgb(117, 221, 204);
+    border-left:  8px solid rgb(117, 221, 204);
+    animation: spin1 2s linear infinite;
+    width: 50px;    
+    height: 50px;
     top: 0;
     left: 0;
 }

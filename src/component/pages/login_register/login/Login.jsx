@@ -1,7 +1,7 @@
 import { NavLink, useNavigate } from "react-router-dom";
 import "./Login.css";
 import { useState, useEffect } from "react";
-import ImgLogin from "../img/index.js";
+// import ImgLogin from "../img/index.js";
 import Loading from '../loading/Loading'
 
 
@@ -10,20 +10,22 @@ let dataUser = {
   name: String,
   password: String,
 };
-let random = Math.floor(Math.random() * ImgLogin.length);
+// let random = Math.floor(Math.random() * ImgLogin.length);
 
 function Login({ onLogin }) {
   const [inputName, setName] = useState("");
   const [inputPassword, setPassword] = useState("");
   const [isloading, setIsLoading] = useState(false);
-  const [randomImg, setRandomImg] = useState(random)
-    useEffect(() => {
-      const inter = setInterval(()=> {
-        random = Math.floor(Math.random() * ImgLogin.length);
-        setRandomImg(random)
-      }, 3000)
-      return () =>      clearInterval(inter)
-  },[randomImg])
+
+
+  // const [randomImg, setRandomImg] = useState(random)
+  //   useEffect(() => {
+  //     const inter = setInterval(()=> {
+  //       random = Math.floor(Math.random() * ImgLogin.length);
+  //       setRandomImg(random)
+  //     }, 3000)
+  //     return () =>      clearInterval(inter)
+  // },[randomImg])
 
 
 
@@ -45,7 +47,6 @@ function Login({ onLogin }) {
       .then((data) => data.json())
       .then((data) => {
         if (data.status === 200) {
-          
           localStorage.setItem('userId', data.id)
           onLogin(data.id);
           // alert("SuccessLogin");
@@ -62,8 +63,7 @@ function Login({ onLogin }) {
     <>
       <div className="login">
         <div className="login-left">
-          {isloading? <div className="login-loading"><Loading /></div> : <></>}
-          
+          {isloading ? <div className="login-loading"><Loading /></div> : <></>}
           <form onSubmit={handleLogin}>
             <div className="login-content">
               <h1 className="login-title">Login to your account</h1>
@@ -110,7 +110,7 @@ function Login({ onLogin }) {
           </form>
         </div>
         <div className="login-right">
-          <img src={ImgLogin[randomImg]} alt="Img Login" className="login-right__img" />
+          {/* <img src={ImgLogin[randomImg]} alt="Img Login" className="login-right__img" /> */}
         </div>
       </div>
     </>
