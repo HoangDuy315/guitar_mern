@@ -1,6 +1,7 @@
 import React from "react";
 import "./Checkout.css";
 import checkout from "../checkout/card_img.png";
+import {  useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 const Checkout = ({data}) => {
   const userID = localStorage.getItem("userId");
@@ -19,8 +20,27 @@ const Checkout = ({data}) => {
   },[])
 
 
+
+  const navigate = useNavigate();
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    fetch(`${process.env.REACT_APP_API}/api/updateUser/` + userID, {
+      method: "PUT",
+      body: JSON.stringify({ Cart: [] }),
+      headers: {
+        "Content-type": "application/json; charset=UTF-8",
+      },
+    })
+      .then((res) => res.json())
+      .then((res) => {
+        if (res.status === 200) {
+          alert("Đặt hàng thành công !");
+          navigate("/cart", { replace: true });
+          window.location.reload();
+
+        } else alert(`${res.message}`);
+      });
   }
   return (
     <div className="checkout">
@@ -32,28 +52,28 @@ const Checkout = ({data}) => {
               <h3 className="title">billing</h3>
               <div className="inputBox">
                 <span>Full name: </span>
-                <input type="text" placeholder="type full name" />
+                <input type="text" required placeholder="type full name" />
               </div>
               <div className="inputBox">
                 <span>Email: </span>
-                <input type="email" placeholder="example@example.com" />
+                <input type="email" required placeholder="example@example.com" />
               </div>
               <div className="inputBox">
                 <span>Address: </span>
-                <input type="text" placeholder="type Address" />
+                <input type="text" required placeholder="type Address" />
               </div>
               <div className="inputBox">
                 <span>City: </span>
-                <input type="text" placeholder="ex:HCM City" />
+                <input type="text" required placeholder="ex:HCM City" />
               </div>
               <div className="flex">
                 <div className="inputBox">
                   <span>state: </span>
-                  <input type="text" placeholder="Vietnam" />
+                  <input type="text" required placeholder="Vietnam" />
                 </div>
                 <div className="inputBox">
                   <span>Zip code: </span>
-                  <input type="text" placeholder="123 456" />
+                  <input type="text" required placeholder="123 456" />
                 </div>
               </div>
             </div>
@@ -69,25 +89,25 @@ const Checkout = ({data}) => {
               </div>
               <div className="inputBox">
                 <span>Name on card: </span>
-                <input type="text" placeholder="type full name" />
+                <input type="text" required placeholder="type full name" />
               </div>
 
               <div className="inputBox">
                 <span>Credit card number: </span>
-                <input type="number" placeholder="1111-2222-3333-4444" />
+                <input type="number" required placeholder="1111-2222-3333-4444" />
               </div>
               <div className="inputBox">
                 <span>Exp month: </span>
-                <input type="text" placeholder="january" />
+                <input type="text" required placeholder="january" />
               </div>
               <div className="flex">
                 <div className="inputBox">
                   <span>Exp year: </span>
-                  <input type="text" placeholder="2022" />
+                  <input type="text" required placeholder="2022" />
                 </div>
                 <div className="inputBox">
                   <span>CVV: </span>
-                  <input type="text" placeholder="535" />
+                  <input type="text" required placeholder="535" />
                 </div>
               </div>
             </div>
