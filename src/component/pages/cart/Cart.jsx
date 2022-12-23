@@ -7,7 +7,7 @@ function Cart() {
   const [listItems, setListItems] = useState([])
   const [subtotal, setSubtotal] = useState(0)
   const [total, setTotal] = useState(0)
-  const [shipping, setShipping] = useState(5.05)
+  const [shipping, setShipping] = useState(0)
   const userID = localStorage.getItem("userId");
 
 
@@ -22,9 +22,12 @@ function Cart() {
       });
   }, []);
   useEffect(()=> {
-    setSubtotal(listItems.reduce((init, current) =>  init + current[0].price * current[1],0 ))
-    setTotal(subtotal + shipping)
+    const money = listItems.reduce((init, current) =>  init + current[0].price * current[1],0)
+    setSubtotal(money)
 
+    const shipping = money * 0.001
+    setShipping(shipping.toFixed(2))
+    setTotal(money + shipping)
 
   }, [listItems])
 
