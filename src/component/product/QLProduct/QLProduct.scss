@@ -103,4 +103,18 @@
       }
     }
   }
+  .more-actions {
+    display: flex;
+    justify-content: center;
+    gap: 32px;
+    margin: 50px 0;
+    .hiden-of, .hiden-on {
+        font-size: 22px;
+
+        &:hover {
+          cursor: pointer;
+          color: rgb(72, 100, 255);
+        }
+    }
+  }
 }

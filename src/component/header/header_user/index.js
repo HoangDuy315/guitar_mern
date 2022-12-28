@@ -37,10 +37,12 @@ function Header_user({onLogoutHeader, onLogOut2}) {
           <i className="fa fa-user" onClick={this}>
             <ul className="user__list">
               <div className="user__list-item-name"><strong>HI, {user.name}</strong></div>
+
               <li ><NavLink className="user__list-item" to="/inforuser">Information</NavLink></li>
               {user.role === "Admin" ? <li ><NavLink className="user__list-item" to="/qluser" onClick={this}>Manage user</NavLink></li> : <></>}
               {user.role === "Admin" ? <li ><NavLink className="user__list-item" to="/qlproduct" onClick={this}>Manage Product</NavLink></li> : <></>}
               <li ><NavLink className="user__list-item" onClick={() => {onLogOut2(); onLogoutHeader()}} to="/">Log out</NavLink></li>
+
             </ul>
           </i>
         </div>

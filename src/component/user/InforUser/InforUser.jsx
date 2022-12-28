@@ -181,6 +181,9 @@ function InforUser() {
           <button type="submit" className="btn-save">
             Save
           </button>
+          <button className="btn-cancel" onClick={() =>setIsEdit(false)}>
+            Cancel  
+          </button>
         </div>
       ) : (
         <></>
