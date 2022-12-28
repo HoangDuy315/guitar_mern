@@ -5,10 +5,10 @@
     position: absolute;
     /* border-top: 10px solid transparent; */
     border-radius: 50%;
-    border-top: 8px solid rgb(117, 221, 204);
-    border-right:  8px solid transparent;
-    border-bottom:  8px solid  rgb(117, 221, 204);
-    border-left:  8px solid rgb(117, 221, 204);
+    border-top: 4px solid rgb(187, 224, 224);
+    border-right:  10px solid rgb(187, 224, 224);
+    border-bottom:  4px solid  rgb(153, 207, 243);
+    border-left:  10px solid rgb(153, 207, 243);
     animation: spin1 2s linear infinite;
     width: 50px;    
     height: 50px;

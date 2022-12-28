@@ -8,7 +8,7 @@ function QLProduct() {
   const [product, setProduct] = useState({});
   
   const [listsProduct, setListsProduct] = useState([]);
-  const [numberShow, setNumberShow] = useState(10);
+  const [numberShow, setNumberShow] = useState(5);
 
 
   const handleChangeAddProduct = () => {
@@ -48,6 +48,15 @@ function QLProduct() {
       });
   };
 
+
+  const handeChangeNumberShow = (key) => {
+    if(key === "hiden") {
+      setNumberShow(numberShow - 5)
+    }
+    if(key === "view") {
+      setNumberShow(numberShow + 5)
+    }
+  }
   return (
     <div className="product">
       <div className="product">
@@ -98,7 +107,14 @@ function QLProduct() {
                 }
               }) 
               }
+              
             </ul>
+            <div className="more-actions">
+              {  numberShow  > 5 ? <p className="hiden-of" onClick={() => handeChangeNumberShow('hiden')}>Hiden of</p>: <></>}
+
+              { numberShow < listsProduct.length ? <p className="hiden-on" onClick={() => handeChangeNumberShow('view')}>View more</p> : <></>}
+              
+            </div>
           </>}
       </div>
     </div>

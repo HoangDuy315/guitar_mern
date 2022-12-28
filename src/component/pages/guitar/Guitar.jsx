@@ -25,8 +25,8 @@ function Guitar() {
           <div className="book__nav">
             <ul className="book__nav--list">
               <li className="book__nav--item">
-                <NavLink className="book__nav--link" to="/books" onClick={this}>
-                  Mới Nhất
+                <NavLink className="book__nav--link" to="/guitar" onClick={this}>
+                  Tất Cả
                 </NavLink>
               </li>
               <li className="book__nav--item">
@@ -36,7 +36,7 @@ function Guitar() {
               </li>
               <li className="book__nav--item">
                 <NavLink className="book__nav--link" to="/books" onClick={this}>
-                  Giảm Giá
+                  Mới Nhất
                 </NavLink>
               </li>
             </ul>
@@ -46,8 +46,10 @@ function Guitar() {
                 
                   <i className="fa fa-angle-left btn-direc-page"></i>
                 </li>
-                <li className="book__nav__direc--item" onClick={handlePageLeft}>
+                <li className="book__nav__direc--item">
+                  <strong>
                   {pageNumber}
+                  </strong>
                 </li>
                 <li className="book__nav__direc--item" onClick={handlePageRight}>
                   <i className="fa fa-angle-right btn-direc-page"></i>
@@ -72,8 +74,7 @@ function Guitar() {
               </ul>
             </div> */}
             <div id="book__container-content">
-            <Page1 page={pageNumber}/>
-            
+              <Page1 page={pageNumber}/>
             </div>
           </div>
         </div>

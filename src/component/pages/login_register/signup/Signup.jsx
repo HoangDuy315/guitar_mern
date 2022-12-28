@@ -1,7 +1,7 @@
 import "./Signup.css";
 import { NavLink, useNavigate} from "react-router-dom";
 import { useState, useEffect } from "react";
-// import ImgLogin from "../img/index.js"
+import ImgLogin from "../img/index.js"
 import Loading from '../loading/Loading'
 
 
@@ -13,7 +13,7 @@ let dataUser = {
   email: String,
 };
 
-// let random = Math.floor(Math.random() * ImgLogin.length);
+let random = Math.floor(Math.random() * ImgLogin.length);
 function Signup() {
   const [inputName, setName] = useState("");
   const [inputPassword, setPassword] = useState("");
@@ -23,14 +23,14 @@ function Signup() {
   const navigate = useNavigate();
 
 
-  // const [randomImg, setRandomImg] = useState(random)
-  //   useEffect(() => {
-  //     const inter = setInterval(()=> {
-  //       random = Math.floor(Math.random() * ImgLogin.length);
-  //       setRandomImg(random)
-  //     }, 3000)
-  //     return () =>      clearInterval(inter)
-  // },[randomImg])
+  const [randomImg, setRandomImg] = useState(random)
+    useEffect(() => {
+      const inter = setInterval(()=> {
+        random = Math.floor(Math.random() * ImgLogin.length);
+        setRandomImg(random)
+      }, 3000)
+      return () =>      clearInterval(inter)
+  },[randomImg])
 
 
 
@@ -94,6 +94,8 @@ function Signup() {
     <>
     <div className="login">
         <div className="login-left">
+
+
         {isLoading? <div className="login-loading"><Loading /></div> : <></>}
 
           <form onSubmit={handleSignup}>
@@ -178,7 +180,7 @@ function Signup() {
           </form>
       </div>
         <div className="login-right">
-          {/* <img src={ImgLogin[randomImg]} alt="Img Login" className="login-right__img" /> */}
+          <img src={ImgLogin[randomImg]} alt="Img Login" className="login-right__img" />
         </div>
       </div>
     </>

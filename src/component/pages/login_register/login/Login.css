@@ -66,9 +66,9 @@
     font-weight: 500px;
     border-radius: 25px;
     border: none;
+    margin: 32px 0;
     margin-left: calc(50% - 100px);
-    margin-bottom: 5%;
-    margin-top: 5%;
+
 }
 .btn-login:hover {
     cursor: pointer;
@@ -88,7 +88,6 @@
 }
 .mr-16 {
     margin: 16px 0;
-    margin-bottom: 10%;
 }
 .mr-32 {
     margin: 32px 0;
