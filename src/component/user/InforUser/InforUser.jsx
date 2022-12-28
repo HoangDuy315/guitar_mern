@@ -29,7 +29,7 @@ function InforUser() {
     let dataUser = user;
 
     if (!file) {
-      alert("Bạn chưa thêm hình !");
+      alert("You have not added an image yet !");
       setShowProcess(false);
       return;
     }
@@ -80,14 +80,14 @@ function InforUser() {
   return (
     <form className="wrapper-inforUser" onSubmit={handlesubmit}>
       <div className="InforUser-title">
-        <h1>Hồ sơ của tôi</h1>
-        <p>Quản lí thông tin hồ sơ để bảo vệ tài khoản</p>
+        <h1>My Profile</h1>
+        <p>Manage profile information to protect your account</p>
       </div>
       {user ? (
         <div className="container-inforUser">
           <div className="container-left">
             <div className="namebox">
-              <span className="title">Tên đăng nhập:</span>
+              <span className="title">User_Name:</span>
               {isEdit ? (
                 <input
                   className="input-Edit"
@@ -120,7 +120,7 @@ function InforUser() {
             </div>
 
             <div className="namebox">
-              <span className="title">Địa chỉ:</span>
+              <span className="title">Address:</span>
               {isEdit ? (
                 <input
                   className="input-Edit"
@@ -135,11 +135,11 @@ function InforUser() {
               )}
             </div>
             <div className="namebox">
-              <span className="title">Ngày tạo</span>
+              <span className="title">Start Date</span>
               <span className="name">{user.dateCreate}</span>
             </div>
             <div className="namebox">
-              <span className="title">Chức vụ</span>
+              <span className="title">Position </span>
               <span className="name">{user.role}</span>
             </div>
           </div>

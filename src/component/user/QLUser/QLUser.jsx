@@ -66,7 +66,7 @@ function QLUer() {
         <></>
       )}
 
-      <h1 className="qluser-title">Quan Ly Thong Tin User</h1>
+      <h1 className="qluser-title">Manage User Information</h1>
       <div className="qluse--container">
         <ul className="qluser__list">
           {listUser.map((user, index) => {
@@ -120,7 +120,7 @@ function QLUer() {
             className="qluser-showmore"
             onClick={() => setNumberShow(numberShow + 10)}
           >
-            Xem them
+           More
           </span>
         </div>
       </div>

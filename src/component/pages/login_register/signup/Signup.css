@@ -14,7 +14,9 @@
 .signup-content {
     margin: auto;
     width: auto;
+
     height: 650px;
+
     background-color: white;
     border-radius: 10px;
     padding: 18px;
@@ -102,7 +104,10 @@
 .btn-strong:hover {
     opacity: .8;
 }
-.checkbox{
+.terms{
+    margin-left: 7%;
+}
+.input-checkbox{
     margin-left: 7%;
     font-weight: 500;
     color: rgb(194, 48, 48);

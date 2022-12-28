@@ -42,10 +42,7 @@ function Contact() {
         <div className="content">
           <h2>Contact Us</h2>
           <p className="ctact-content-p">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae
-            laboriosam minima adipisci error voluptatum voluptatem nulla ad.
-            Minima laudantium cum, in minus animi voluptatum provident repellat
-            cupiditate nesciunt accusantium aut?
+          Any problems, please contact us, with a staff of 24/24 ready to assist you in the most enthusiastic way.
           </p>
         </div>
         <div className="ctact-container">
@@ -66,7 +63,7 @@ function Contact() {
               </div>
               <div className="text">
                 <h3>Phone</h3>
-                <p> 0111.222.333</p>
+                <p> 0827772001</p>
               </div>
             </div>
 
